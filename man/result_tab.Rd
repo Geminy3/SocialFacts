@@ -2,7 +2,7 @@
 % Please edit documentation in R/result_tab.R
 \name{result_tab}
 \alias{result_tab}
-\title{Get the result table of OR, AME and AAF}
+\title{result_tab}
 \usage{
 result_tab(
   model = NULL,

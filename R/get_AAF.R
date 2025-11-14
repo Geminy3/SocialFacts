@@ -1,3 +1,5 @@
+#' @title get_AAF
+#' @description
 #' Get the AAF
 #'
 #' @param model The model you want to compute AAF on

@@ -2,7 +2,7 @@
 % Please edit documentation in R/cramer_tab.R
 \name{get_list}
 \alias{get_list}
-\title{Get a list with the names of the variables pass as parameter}
+\title{get_list}
 \usage{
 get_list(name_var = NULL)
 }

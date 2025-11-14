@@ -1,3 +1,5 @@
+#' @title get_list
+#' @description
 #' Get a list with the names of the variables pass as parameter
 #'
 #' @param name_var A list of variable you want to pass a name for a list
@@ -18,7 +20,9 @@ get_list <- function(name_var = NULL) {
 }
 
 
-#' Get Cramer of YuleQ's tab
+#' @title get_cramer
+#' @description
+#' Get Cramer or YuleQ's tab
 #'
 #' @param var A list of variable name you want to compute "metric" on
 #' @param metric Choose between 'Cramer' or 'YuleQ' parameter to select one of this metrics

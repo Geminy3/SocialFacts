@@ -1,5 +1,7 @@
 globalVariables(c("label", "position", 'est'))
 
+#' @title result_tab
+#' @description
 #' Get the result table of OR, AME and AAF
 #'
 #' @param model The model used to perform statistical analysis

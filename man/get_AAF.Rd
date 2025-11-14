@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_AAF.R
 \name{get_AAF}
 \alias{get_AAF}
-\title{Get the AAF}
+\title{get_AAF}
 \usage{
 get_AAF(
   model = NULL,
