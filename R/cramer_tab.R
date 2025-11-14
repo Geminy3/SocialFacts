@@ -27,6 +27,7 @@ get_list <- function(name_var) {
 #' @returns A list of gt information
 #' @import DescTools
 #' @import gt
+#' @import stats
 #' @export
 #'
 #' @examples
