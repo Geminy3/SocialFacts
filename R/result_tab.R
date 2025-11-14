@@ -6,19 +6,25 @@
 #' @param data The data used for the statistical analysis
 #'
 #' @returns A gt table
+#' @import gt
+#' @import dplyr
+#' @import gtsummary
+#' @import broom.helpers
+#' @import scales
+#' @import stringr
 #' @export
 #'
 #' @examples
-#' res_tab <- result_tab(model, var_ref = "var_0", res_AAF = resAAF$res, data = data)
-result_tab <- function(model, var_ref, res_AAF, data) {
+#' res_tab <- result_tab(model, var_ref = "var_0", var_names = c("var_1", "var_2", "var_3") res_AAF = resAAF$res, data = data)
+result_tab <- function(model, var_ref, var_names, res_AAF, data) {
 
-  var = sym(var_ref)
+  var = dplyr::sym(var_ref)
 
   #ODDS RATIO TAB
-  odds_tab <- tbl_regression(model, exponentiate = T)
+  odds_tab <- gtsummary::tbl_regression(model, exponentiate = T)
 
   #AME TAB
-  marge <- model %>%
+  marge <- model |>
     gtsummary::tbl_regression(
       tidy_fun = broom.helpers::tidy_avg_slopes,
       estimate_fun = scales::label_percent(
@@ -26,58 +32,58 @@ result_tab <- function(model, var_ref, res_AAF, data) {
         style_positive = "plus"
       )
     )
-  marge$table_body %>%
-    mutate(label = str_remove(label, ' - .*$'), term = str_remove(label, ' - .*$')) -> marge$table_body
+  marge$table_body |>
+    dplyr::mutate(label = stringr::str_remove(label, ' - .*$'), term = stringr::str_remove(label, ' - .*$')) -> marge$table_body
 
   #CONTINGENCE TAB
-  contingence <- data %>%
-    tbl_summary(
+  contingence <- data |>
+    gtsummary::tbl_summary(
       by = !!var_ref,
-      include = c(-weights, -ski_alp, -REG)
-    ) %>%
-    add_ci() %>%
-    add_p()
+      include = var_names#c(-weights, -ski_alp, -REG)
+    ) |>
+    gtsummary::add_ci() |>
+    gtsummary::add_p()
 
   # MERGE TAB
-  clean_AAF <- res_AAF %>% filter(position %in% c("Average", "Joint")) %>%
-    arrange(desc(est)) %>%
-    gt::gt() %>%
-    tab_header(title = "Average Attributable Fraction",
-               subtitle = "sur la pratique d'un sport en club") %>%
-    gt::tab_spanner(label = "CI", columns = c("norm_lower", "norm_upper")) %>%
-    gt::tab_spanner(label = "Estimation moyenne", columns = c("est", "debiased_est")) %>%
-    gt::fmt_number(columns = everything(), suffixing = T) %>%
+  clean_AAF <- res_AAF |> filter(position %in% c("Average", "Joint")) |>
+    dplyr::arrange(desc(est)) |>
+    gt::gt() |>
+    gt::tab_header(title = "Average Attributable Fraction",
+               subtitle = "sur la pratique d'un sport en club") |>
+    gt::tab_spanner(label = "CI", columns = c("norm_lower", "norm_upper")) |>
+    gt::tab_spanner(label = "Estimation moyenne", columns = c("est", "debiased_est")) |>
+    gt::fmt_number(columns = dplyr::everything(), suffixing = T) |>
     gt::data_color(
       columns = c('debiased_est', 'norm_lower', 'norm_upper'),
       method = "numeric",
-      rows = c(contains('Average', vars = c(position))),
+      rows = c(dplyr::contains('Average', vars = c(position))),
       palette = c("lightblue", "#F2715A"),
-    ) %>%
+    ) |>
     gt::data_color(
-      columns = everything(), #c("position", "debiased_est", "norm_lower", "norm_upper"),
-      rows = c(contains('Joint', vars = c(position))),
+      columns = dplyr::everything(), #c("position", "debiased_est", "norm_lower", "norm_upper"),
+      rows = c(dplyr::contains('Joint', vars = c(position))),
       palette = c("gold"),
-    ) %>%
+    ) |>
     gt::tab_options(table.width = gt::pct(100))
 
-  tab_recap <- tbl_merge(list(odds_tab, marge, contingence), tab_spanner = c("Odds ratio", 'Average Marginal Effects', var_ref)) %>%
-    as_gt() %>%
-    tab_header(title = "Tableau Récapitulatif",
-               subtitle = paste("Sur la variable", var_ref)) %>%
-    data_color(
+  tab_recap <- tbl_merge(list(odds_tab, marge, contingence), tab_spanner = c("Odds ratio", 'Average Marginal Effects', var_ref)) |>
+    gtsummary::as_gt() |>
+    gt::tab_header(title = "Tableau Récapitulatif",
+               subtitle = paste("Sur la variable", var_ref)) |>
+    gt::data_color(
       columns = c("estimate_1", "ci_1", "estimate_2", "ci_2"),
-      rows = everything(),
+      rows = dplyr::everything(),
       palette = c("lightblue", "#F2715A"),
       na_color = "white"
-    ) %>%
-    data_color(
+    ) |>
+    gt::data_color(
       columns = c("p.value_1", "p.value_2", 'p.value_3'),
-      rows = everything(),
+      rows = dplyr::everything(),
       palette = c("gold", "darkgreen"),
       na_color = "white"
-    ) %>%
+    ) |>
     gt::tab_footnote(footnote = "Source : ENPPS 2020")
 
-  tab <- gt::tab_source_note(tab_recap, clean_AAF %>% gt::as_raw_html())
+  tab <- gt::tab_source_note(tab_recap, clean_AAF |> gt::as_raw_html())
   return(tab)
 }

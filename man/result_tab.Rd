@@ -4,7 +4,7 @@
 \alias{result_tab}
 \title{Get the result table of OR, AME and AAF}
 \usage{
-result_tab(model, var_ref, res_AAF, data)
+result_tab(model, var_ref, var_names, res_AAF, data)
 }
 \arguments{
 \item{model}{The model used to perform statistical analysis}
@@ -22,5 +22,5 @@ A gt table
 Get the result table of OR, AME and AAF
 }
 \examples{
-res_tab <- result_tab(model, var_ref = "var_0", res_AAF = resAAF$res, data = data)
+res_tab <- result_tab(model, var_ref = "var_0", var_names = c("var_1", "var_2", "var_3") res_AAF = resAAF$res, data = data)
 }

@@ -8,6 +8,8 @@
 #' @param nbootstrap An integer with the n bootsrap replication you want. By default, 50.
 #'
 #' @returns A sf table with the result of the AAF computation
+#' @import averisk
+#' @import graphPAF
 #' @export
 #'
 #' @examples
@@ -42,16 +44,16 @@ get_AAF <- function(model, nvar = NULL, name_var = NULL, vars_dep = NULL, data =
   #print(node)
   print("COMPUTE")
 
-  models <- automatic_fit(
-    data_clean(data, vars=vars_vec, model = model),
+  models <- graphPAF::automatic_fit(
+    graphPAF::data_clean(data, vars=vars_vec, model = model),
     parent_list = c(replicate(n = length(parent_vec),
                               c(),
                               simplify = F),
                     list(parent_vec)),
     node_vec = node)
 
-  res <- average_paf(
-    data_clean(data, vars=vars_vec, model = model),
+  res <- graphPAF::average_paf(
+    graphPAF::data_clean(data, vars=vars_vec, model = model),
     model_list = models,
     parent_list = c(replicate(n = length(parent_vec),
                               c(),
