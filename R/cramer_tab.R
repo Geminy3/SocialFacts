@@ -37,7 +37,7 @@ cramer_tab <- function(var, metric = 'cramer', data) {
       if (x != y) {
         #print(paste(x, "-" ,y))
         if (metric == 'cramer') {
-          vec_metric[[x]][y] <- cramerV(data[[x]], data[[y]])[['Cramer V']]
+          vec_metric[[x]][y] <- DescTools::cramerV(data[[x]], data[[y]])[['Cramer V']]
           vec_chi[[x]][y] <- round(chisq.test(data[[x]], data[[y]])$p.value, 5)
         } else if (metric == 'yuleQ') {
           print('no yule')
