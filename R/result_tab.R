@@ -1,4 +1,4 @@
-#' Title
+#' Get the result table of OR, AME and AAF
 #'
 #' @param model The model used to perform statistical analysis
 #' @param var_ref The variable to explain in the statistical model

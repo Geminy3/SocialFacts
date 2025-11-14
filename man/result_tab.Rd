@@ -2,7 +2,7 @@
 % Please edit documentation in R/result_tab.R
 \name{result_tab}
 \alias{result_tab}
-\title{Title}
+\title{Get the result table of OR, AME and AAF}
 \usage{
 result_tab(model, var_ref, res_AAF, data)
 }
@@ -19,7 +19,7 @@ result_tab(model, var_ref, res_AAF, data)
 A gt table
 }
 \description{
-Title
+Get the result table of OR, AME and AAF
 }
 \examples{
 res_tab <- result_tab(model, var_ref = "var_0", res_AAF = resAAF$res, data = data)

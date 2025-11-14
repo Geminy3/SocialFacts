@@ -2,7 +2,7 @@
 % Please edit documentation in R/cramer_tab.R
 \name{cramer_tab}
 \alias{cramer_tab}
-\title{Title}
+\title{Get Cramer of YuleQ's tab}
 \usage{
 cramer_tab(var, metric = "cramer", data)
 }
@@ -17,7 +17,7 @@ cramer_tab(var, metric = "cramer", data)
 A list of gt information
 }
 \description{
-Title
+Get Cramer of YuleQ's tab
 }
 \examples{
 cramer_tab(c("var_1", "var_2"), metric = 'cramer', data = data)

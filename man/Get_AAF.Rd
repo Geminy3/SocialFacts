@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_AAF.R
 \name{Get_AAF}
 \alias{Get_AAF}
-\title{Title}
+\title{Get the AAF}
 \usage{
 Get_AAF(
   model,
@@ -30,7 +30,7 @@ Get_AAF(
 A sf table with the result of the AAF computation
 }
 \description{
-Title
+Get the AAF
 }
 \examples{
 res <- get_AAF(model, nvar = 5, vars_dep = "dependant_var", data = data)

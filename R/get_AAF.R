@@ -1,4 +1,4 @@
-#' Title
+#' Get the AAF
 #'
 #' @param model The model you want to compute AAF on
 #' @param nvar You can choose this `integer` parameter if you prefer to add explanatory variables in the order they appear in the model. You don't have to use `name_var` parameter.
