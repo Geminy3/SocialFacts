@@ -25,9 +25,10 @@ get_list <- function(name_var = NULL) {
 #' @param df The data table you want to compute 'metric' parameter on
 #'
 #' @returns A list of gt information
-#' @import rcompanion
+#' @importFrom rcompanion cramerV
 #' @import gt
-#' @import stats
+#' @importFrom stats cor
+#' @importFrom stats chisq.test
 #' @export
 #'
 #' @examples

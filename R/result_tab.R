@@ -12,7 +12,7 @@ globalVariables(c("label", "position", 'est'))
 #' @import gt
 #' @import dplyr
 #' @import gtsummary
-#' @import broom.helpers
+#' @importFrom broom.helpers tidy_avg_slopes
 #' @import scales
 #' @import stringr
 #' @export
