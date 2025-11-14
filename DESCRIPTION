@@ -1,9 +1,9 @@
 Package: SocialFacts
-Title: What the Package Does (One Line, Title Case)
+Title: SocialFacts : A package to resume Social sciences indicators
 Version: 0.0.0.9000
 Authors@R: 
-    person("Alioscha", "Massein", "alioscha.massein@cnrs.fr", role = c("aut", "cre"))
-    person("Brice", "Lefèvre", "", role = c("aut"))
+    person("Alioscha", "Massein", "alioscha.massein@cnrs.fr", role = c("aut", "cre"), comment = c(ORCID = "0009-0005-5791-1045"))
+    person("Brice", "Lefèvre", "brice.lefevre@univ-lyon1.fr", role = c("aut"), comment = c(ORCID = "0000-0002-2482-7104"))
 Description: This package helps you to compute AAF production, and produce a GT table with OR, AME and AAF, with CI and p.value.
 License: CC BY 4.0
 Encoding: UTF-8
