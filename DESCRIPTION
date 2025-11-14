@@ -2,8 +2,9 @@ Package: SocialFacts
 Title: What the Package Does (One Line, Title Case)
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+    person("Alioscha", "Massein", "alioscha.massein@cnrs.fr", role = c("aut", "cre"))
+    person("Brice", "Lefèvre", "", role = c("aut"))
+Description: This package helps you to compute AAF production, and produce a GT table with OR, AME and AAF, with CI and p.value.
 License: CC BY 4.0
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
