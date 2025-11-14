@@ -13,11 +13,11 @@ RoxygenNote: 7.3.2
 Imports: 
     averisk,
     broom.helpers,
-    DescTools,
     dplyr,
     graphPAF,
     gt,
     gtsummary,
+    rcompanion,
     scales,
     stats,
     stringr
