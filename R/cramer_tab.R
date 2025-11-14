@@ -68,7 +68,8 @@ cramer_tab <- function(var = NULL, metric = 'cramer', df = NULL) {
     gt::data_color(
       method = 'numeric',
       palette = c("purple", "gold"),
-      domain = c(0,0.05), na_color = "white"
+      domain = c(0,1),
+      na_color = "white"
     ) |>
     gt::tab_header(title = "Chi2 des variables", subtitle = gt::md("arrondi - $10^{-5}$"))
   metric = as.data.frame(vec_metric) |>
