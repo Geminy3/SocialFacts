@@ -14,7 +14,8 @@
 #'
 #' @examples
 #' \dontrun{res <- get_AAF(model = glmmodel, nvar = 5, vars_dep = "dependant_var", data = data)}
-#' \dontrun{res <- get_AAF(model = glmmodel, name_var = c("var_1", "var_2", "var_3", "var_4", "var_5"), vars_dep = "dependant_var", data = data, nbootstrap = 100)}
+#' \dontrun{res <- get_AAF(model = glmmodel, name_var = c("var_1", "var_2", "var_3", "var_4", "var_5"),
+#'                         vars_dep = "dependant_var", data = data, nbootstrap = 100)}
 get_AAF <- function(model = NULL, nvar = NULL, name_var = NULL, vars_dep = NULL, data = NULL,
                    nbootstrap = 50) {
   # SETUP

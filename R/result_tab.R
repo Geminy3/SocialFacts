@@ -1,3 +1,5 @@
+globalVariables(c("label", "position", 'est'))
+
 #' Get the result table of OR, AME and AAF
 #'
 #' @param model The model used to perform statistical analysis
@@ -16,7 +18,8 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{res_tab <- result_tab(model = glmmodel, var_ref = "var_0", var_names = c("var_1", "var_2", "var_3"), res_AAF = resAAF$res, data = data)}
+#' \dontrun{res_tab <- result_tab(model = glmmodel, var_ref = "var_0", var_names = c("var_1", "var_2", "var_3"),
+#'                     res_AAF = resAAF$res, data = data)}
 result_tab <- function(model = NULL, var_ref = NULL, var_names = NULL, res_AAF = NULL, data = data.frame()) {
 
   var = dplyr::sym(var_ref)

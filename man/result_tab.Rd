@@ -30,5 +30,6 @@ A gt table
 Get the result table of OR, AME and AAF
 }
 \examples{
-\dontrun{res_tab <- result_tab(model = glmmodel, var_ref = "var_0", var_names = c("var_1", "var_2", "var_3"), res_AAF = resAAF$res, data = data)}
+\dontrun{res_tab <- result_tab(model = glmmodel, var_ref = "var_0", var_names = c("var_1", "var_2", "var_3"),
+                    res_AAF = resAAF$res, data = data)}
 }
