@@ -1,4 +1,13 @@
-get_list <- function(name_var, type) {
+#' Title
+#'
+#' @param name_var A list of variable you want to pass a name for a list
+#'
+#' @returns a list of zero named after the variable in name_var parameter
+#' @export
+#'
+#' @examples
+#' vec <- get_list(name_var = c("var1", "var2"))
+get_list <- function(name_var) {
   vec <- rep_len(list(), length(name_var))
   names(vec) = name_var
   for (v in name_var) {
@@ -8,9 +17,21 @@ get_list <- function(name_var, type) {
   return(vec)
 }
 
+
+#' Title
+#'
+#' @param var A list of variable name you want to compute "metric" on
+#' @param metric Choose between 'Cramer' or 'YuleQ' parameter to select one of this metrics
+#' @param data The data table you want to compute 'metric' parameter on
+#'
+#' @returns A list of gt information
+#' @export
+#'
+#' @examples
+#' cramer_tab(c("var_1", "var_2"), metric = 'cramer', data = data)
 cramer_tab <- function(var, metric = 'cramer', data) {
-  vec_metric <- get_list(var, 'list')
-  vec_chi <- get_list(var, 'list')
+  vec_metric <- get_list(var)
+  vec_chi <- get_list(var)
   for (x in var) {
     for (y in var) {
       if (x != y) {

@@ -15,7 +15,7 @@ library(stringr)
 # FONCTIONS
 
 ### LISTE
-get_list <- function(name_var, type) {
+get_list <- function(name_var) {
   vec <- rep_len(list(), length(name_var))
   names(vec) = name_var
   for (v in name_var) {
@@ -28,8 +28,8 @@ get_list <- function(name_var, type) {
 ### GET CRAMER TAB
 
 get_cramer_tab <- function(var, metric = 'cramer', data) {
-  vec_metric <- get_list(var, 'list')
-  vec_chi <- get_list(var, 'list')
+  vec_metric <- get_list(var)
+  vec_chi <- get_list(var)
   for (x in var) {
     for (y in var) {
       if (x != y) {

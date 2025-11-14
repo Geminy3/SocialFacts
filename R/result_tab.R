@@ -1,3 +1,15 @@
+#' Title
+#'
+#' @param model The model used to perform statistical analysis
+#' @param var_ref The variable to explain in the statistical model
+#' @param res_AAF the result of the AAF computation with `get_AAF()` function (done outside of this function because of the length of the computation)
+#' @param data The data used for the statistical analysis
+#'
+#' @returns A gt table
+#' @export
+#'
+#' @examples
+#' res_tab <- result_tab(model, var_ref = "var_0", res_AAF = resAAF$res, data = data)
 result_tab <- function(model, var_ref, res_AAF, data) {
 
   var = sym(var_ref)
