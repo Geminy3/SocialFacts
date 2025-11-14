@@ -2,7 +2,7 @@
 % Please edit documentation in R/cramer_tab.R
 \name{get_list}
 \alias{get_list}
-\title{Get a list with the names of the variables pass as paramter}
+\title{Get a list with the names of the variables pass as parameter}
 \usage{
 get_list(name_var)
 }
@@ -13,7 +13,7 @@ get_list(name_var)
 a list of zero named after the variable in name_var parameter
 }
 \description{
-Get a list with the names of the variables pass as paramter
+Get a list with the names of the variables pass as parameter
 }
 \examples{
 vec <- get_list(name_var = c("var1", "var2"))
