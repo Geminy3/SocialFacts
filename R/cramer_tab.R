@@ -58,7 +58,7 @@ cramer_tab <- function(var, metric = 'cramer', data) {
       palette = c("purple", "gold"),
       domain = c(0,0.05), na_color = "white"
     ) %>%
-    gt::tab_header(title = "Chi2 des variables", subtitle = gt::md("arrondi à $10^{-5}$"))
+    gt::tab_header(title = "Chi2 des variables", subtitle = gt::md("arrondi - $10^{-5}$"))
   metric = as.data.frame(vec_metric) %>%
     gt::gt(rownames_to_stub = T) %>%
     gt::data_color(
@@ -66,6 +66,6 @@ cramer_tab <- function(var, metric = 'cramer', data) {
       palette = c("purple", "gold"),
       domain = c(0,1)
     ) %>%
-    gt::tab_header(title = "Corrélation des variables", subtitle = metric)
+    gt::tab_header(title = "Correlation des variables", subtitle = metric)
   return(list(chi2 = chi2, metric = metric))
 }

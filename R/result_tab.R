@@ -15,7 +15,7 @@
 #' @export
 #'
 #' @examples
-#' res_tab <- result_tab(model, var_ref = "var_0", var_names = c("var_1", "var_2", "var_3") res_AAF = resAAF$res, data = data)
+#' res_tab <- result_tab(model, var_ref = "var_0", var_names = c("var_1", "var_2", "var_3"), res_AAF = resAAF$res, data = data)
 result_tab <- function(model, var_ref, var_names, res_AAF, data) {
 
   var = dplyr::sym(var_ref)
@@ -68,7 +68,7 @@ result_tab <- function(model, var_ref, var_names, res_AAF, data) {
 
   tab_recap <- tbl_merge(list(odds_tab, marge, contingence), tab_spanner = c("Odds ratio", 'Average Marginal Effects', var_ref)) |>
     gtsummary::as_gt() |>
-    gt::tab_header(title = "Tableau Récapitulatif",
+    gt::tab_header(title = "Tableau Recapitulatif",
                subtitle = paste("Sur la variable", var_ref)) |>
     gt::data_color(
       columns = c("estimate_1", "ci_1", "estimate_2", "ci_2"),
