@@ -4,12 +4,20 @@
 \alias{result_tab}
 \title{Get the result table of OR, AME and AAF}
 \usage{
-result_tab(model, var_ref, var_names, res_AAF, data)
+result_tab(
+  model = NULL,
+  var_ref = NULL,
+  var_names = NULL,
+  res_AAF = NULL,
+  data = data.frame()
+)
 }
 \arguments{
 \item{model}{The model used to perform statistical analysis}
 
 \item{var_ref}{The variable to explain in the statistical model}
+
+\item{var_names}{A list with the name of the variable you want to show on the contingency tables}
 
 \item{res_AAF}{the result of the AAF computation with \code{get_AAF()} function (done outside of this function because of the length of the computation)}
 
@@ -22,5 +30,5 @@ A gt table
 Get the result table of OR, AME and AAF
 }
 \examples{
-res_tab <- result_tab(model, var_ref = "var_0", var_names = c("var_1", "var_2", "var_3"), res_AAF = resAAF$res, data = data)
+\dontrun{res_tab <- result_tab(model = glmmodel, var_ref = "var_0", var_names = c("var_1", "var_2", "var_3"), res_AAF = resAAF$res, data = data)}
 }

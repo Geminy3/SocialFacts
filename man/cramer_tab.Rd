@@ -4,14 +4,14 @@
 \alias{cramer_tab}
 \title{Get Cramer of YuleQ's tab}
 \usage{
-cramer_tab(var, metric = "cramer", data)
+cramer_tab(var = NULL, metric = "cramer", df = NULL)
 }
 \arguments{
 \item{var}{A list of variable name you want to compute "metric" on}
 
 \item{metric}{Choose between 'Cramer' or 'YuleQ' parameter to select one of this metrics}
 
-\item{data}{The data table you want to compute 'metric' parameter on}
+\item{df}{The data table you want to compute 'metric' parameter on}
 }
 \value{
 A list of gt information
@@ -20,5 +20,5 @@ A list of gt information
 Get Cramer of YuleQ's tab
 }
 \examples{
-cramer_tab(c("var_1", "var_2"), metric = 'cramer', data = data)
+cramer_tab(c("var_1", "var_2"), metric = 'cramer', df = df)
 }

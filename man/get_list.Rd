@@ -4,7 +4,7 @@
 \alias{get_list}
 \title{Get a list with the names of the variables pass as parameter}
 \usage{
-get_list(name_var)
+get_list(name_var = NULL)
 }
 \arguments{
 \item{name_var}{A list of variable you want to pass a name for a list}

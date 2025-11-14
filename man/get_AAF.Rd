@@ -5,7 +5,7 @@
 \title{Get the AAF}
 \usage{
 get_AAF(
-  model,
+  model = NULL,
   nvar = NULL,
   name_var = NULL,
   vars_dep = NULL,
@@ -33,6 +33,6 @@ A sf table with the result of the AAF computation
 Get the AAF
 }
 \examples{
-res <- get_AAF(model, nvar = 5, vars_dep = "dependant_var", data = data)
-res <- get_AAF(model, name_var = c(var_1, var_2, var_3, var_4, var_5), vars_dep= "dependant_var", data = data, nbootstrap = 100)
+\dontrun{res <- get_AAF(model = glmmodel, nvar = 5, vars_dep = "dependant_var", data = data)}
+\dontrun{res <- get_AAF(model = glmmodel, name_var = c("var_1", "var_2", "var_3", "var_4", "var_5"), vars_dep = "dependant_var", data = data, nbootstrap = 100)}
 }

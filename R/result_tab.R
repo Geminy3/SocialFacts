@@ -2,6 +2,7 @@
 #'
 #' @param model The model used to perform statistical analysis
 #' @param var_ref The variable to explain in the statistical model
+#' @param var_names A list with the name of the variable you want to show on the contingency tables
 #' @param res_AAF the result of the AAF computation with `get_AAF()` function (done outside of this function because of the length of the computation)
 #' @param data The data used for the statistical analysis
 #'
@@ -15,8 +16,8 @@
 #' @export
 #'
 #' @examples
-#' res_tab <- result_tab(model, var_ref = "var_0", var_names = c("var_1", "var_2", "var_3"), res_AAF = resAAF$res, data = data)
-result_tab <- function(model, var_ref, var_names, res_AAF, data) {
+#' \dontrun{res_tab <- result_tab(model = glmmodel, var_ref = "var_0", var_names = c("var_1", "var_2", "var_3"), res_AAF = resAAF$res, data = data)}
+result_tab <- function(model = NULL, var_ref = NULL, var_names = NULL, res_AAF = NULL, data = data.frame()) {
 
   var = dplyr::sym(var_ref)
 
