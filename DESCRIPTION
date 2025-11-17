@@ -1,6 +1,6 @@
 Package: SocialFacts
 Title: SocialFacts : A package to resume Social sciences indicators
-Version: 0.0.1
+Version: 0.0.2
 Authors@R: c(
       person("Alioscha", "Massein", email = "alioscha.massein@cnrs.fr", role = c("aut", "cre"), comment = c(ORCID = "0009-0005-5791-1045")),
       person("Brice", "Lefèvre", email = "brice.lefevre@univ-lyon1.fr", role = c("aut"), comment = c(ORCID = "0000-0002-2482-7104"))
@@ -16,6 +16,7 @@ Imports:
     dplyr,
     graphPAF,
     gt,
+    psych,
     gtsummary,
     rcompanion,
     scales,

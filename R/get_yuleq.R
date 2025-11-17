@@ -3,7 +3,6 @@
 #' @description
 #' Get Yule's Q
 #'
-#'
 #' @param vars_dep A string with name of the dependant variable to use as one variable for the 2x2 table
 #' @param name_var A vector of explanatory variable you want to compute Yule's Q on
 #' @param data A dataframe with the variable named before
@@ -11,10 +10,12 @@
 #'
 #' @returns A gt table with the Yule's computed for the variable in name_var
 #' @import gt
+#' @importFrom psych dummy.code
 #' @export
 #'
 #' @examples
-#' \dontrun{get_yuleq(vars_dep = "dependant_var", name_var = c("var_1", "var_2"), data = data, source = "dataSource - Year")}
+#' \dontrun{get_yuleq(vars_dep = "dependant_var", name_var = c("var_1", "var_2"),
+#'                     data = data, source = "dataSource - Year")}
 get_yuleq <- function(vars_dep = NULL, name_var = c(), data = NULL, source = "") {
 
   if (is.null(vars_dep)) {
@@ -32,7 +33,7 @@ get_yuleq <- function(vars_dep = NULL, name_var = c(), data = NULL, source = "")
   for (var in name_var) {
     if (var != vars_dep) {
       if (length(unique(data[[var]])) > 2) {
-        dum_tab <- dummy.code(data[[var]])
+        dum_tab <- psych::dummy.code(data[[var]])
         #print(colnames(dum_tab))
         for (col in colnames(dum_tab)) {
           #print(col)

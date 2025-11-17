@@ -8,6 +8,7 @@ SocialFacts brings a tool to produce easily multiple indicators commonly used in
 - Odds Ratio, with p.value and CI
 - Average Marginal Effects, with CI
 - A cramer's V table, to check correlation between your categorical variables
+- A gt table with Yule's Q value compute against the `vars_dep` argument.
 - A new tool called Average Attributable Fraction, described by Ferguson and al. here : 
 We use the original `graphPAF` library, and facilitate it's use to produce a table which resume all of this tools in one place.
 
