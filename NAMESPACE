@@ -3,6 +3,7 @@
 export(cramer_tab)
 export(get_AAF)
 export(get_list)
+export(get_yuleq)
 export(result_tab)
 import(averisk)
 import(dplyr)
