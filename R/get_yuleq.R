@@ -76,7 +76,7 @@ get_yuleq <- function(vars_dep = NULL, name_var = c(), data = NULL, source = "")
       columns = YuleQ,
       method = "bin",
       palette = c("#F44333", "#2BBFFF", "#F44333"),
-      bins = c(-1, -0.2, 0.2, 1),
+      bins = c(-1, -0.2, -0.1, 0.1, 0.2, 1),
       na_color = "white"
     ) %>%
     gt::fmt_percent(columns = YuleQ, decimals = 2) %>%
