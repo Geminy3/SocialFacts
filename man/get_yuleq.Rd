@@ -4,7 +4,13 @@
 \alias{get_yuleq}
 \title{Get Yule's Q}
 \usage{
-get_yuleq(vars_dep = NULL, name_var = c(), data = NULL, source = "")
+get_yuleq(
+  vars_dep = NULL,
+  name_var = c(),
+  data = NULL,
+  source = "",
+  alpha = 0.01
+)
 }
 \arguments{
 \item{vars_dep}{A string with name of the dependant variable to use as one variable for the 2x2 table}
@@ -14,6 +20,8 @@ get_yuleq(vars_dep = NULL, name_var = c(), data = NULL, source = "")
 \item{data}{A dataframe with the variable named before}
 
 \item{source}{A string with the name of the data source}
+
+\item{alpha}{A integer with the alpha value for fisher.test and IC}
 }
 \value{
 A gt table with the Yule's computed for the variable in name_var
