@@ -14,7 +14,7 @@ Imports:
     averisk,
     broom.helpers,
     dplyr,
-    graphPAF,
+    graphPAF (>= 2.0.0),
     gt,
     psych,
     gtsummary,
@@ -25,3 +25,5 @@ Imports:
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
+Remotes:  
+    johnfergusonnuig/graphpaf
