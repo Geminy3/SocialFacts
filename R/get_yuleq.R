@@ -100,7 +100,7 @@ get_yuleq <- function(vars_dep = NULL, name_var = c(), data = NULL, source = "",
   }
   YuleQ <- list("var" = vars, "moda" = modas, "YuleQ" = yules,
                 "se.Q" = se.Qs, "ll" = ll.Qs, "ul" = ul.Qs, "p.value" = fisher)
-  print(YuleQ)
+  # print(YuleQ)
   YuleQ <- YuleQ %>%
     as.data.frame() %>%
     gt(groupname_col = "var", row_group_as_column = T) %>%
