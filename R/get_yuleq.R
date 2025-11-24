@@ -101,33 +101,33 @@ get_yuleq <- function(vars_dep = NULL, name_var = c(), data = NULL, source = "",
   YuleQ <- list("var" = vars, "moda" = modas, "YuleQ" = yules,
                 "se.Q" = se.Qs, "ll" = ll.Qs, "ul" = ul.Qs, "p.value" = fisher)
   # print(YuleQ)
-  YuleQ <- YuleQ %>%
-    as.data.frame() %>%
-    gt(groupname_col = "var", row_group_as_column = T) %>%
-    gt::sub_missing(columns = YuleQ, missing_text = "- Ref -") %>%
-    gt::sub_missing(columns = c(se.Q, ll, ul, p.value), missing_text = "") %>%
+  YuleQ <- YuleQ |>
+    as.data.frame() |>
+    gt(groupname_col = "var", row_group_as_column = T) |>
+    gt::sub_missing(columns = YuleQ, missing_text = "- Ref -") |>
+    gt::sub_missing(columns = c(se.Q, ll, ul, p.value), missing_text = "") |>
     gt::data_color(
       columns = YuleQ,
       method = "bin",
       palette = c("#F44333", "#2BBFFF", "#F44333"), #"#81F",
       bins = c(-1, -0.2, -0.1, 0.1, 0.2, 1),
       na_color = "white"
-    ) %>%
-    gt::fmt_number(columns = everything(), decimals = 3) %>%
-    gt::fmt_percent(columns = c(YuleQ, ll, ul), decimals = 2) %>%
+    ) |>
+    gt::fmt_number(columns = everything(), decimals = 3) |>
+    gt::fmt_percent(columns = c(YuleQ, ll, ul), decimals = 2) |>
     gt::data_color(
       columns = p.value,
       palette = c("gold", "darkgreen"), #"#81F",
       na_color = "white"
-    ) %>%
+    ) |>
     gt::cols_label(
       moda = "",
       YuleQ = "Q de Yule"
-    ) %>%
+    ) |>
     gt::tab_header(
       title = "Q de Yule",
       subtitle = paste("Sur la variable", vars_dep)
-    ) %>%
+    ) |>
     gt::tab_footnote(
       footnote = paste("Source :", source)
     )
