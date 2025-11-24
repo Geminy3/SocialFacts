@@ -31,5 +31,5 @@ Get Yule's Q
 }
 \examples{
 \dontrun{get_yuleq(vars_dep = "dependant_var", name_var = c("var_1", "var_2"),
-                    data = data, source = "dataSource - Year")}
+                    data = data, source = "dataSource - Year", alpha = 0.01)}
 }
