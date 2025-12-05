@@ -69,7 +69,7 @@ get_yuleq <- function(vars_dep = NULL, name_var = c(), data = NULL, source = "",
           se.Qs <- c(se.Qs, se.Q)
           ll.Qs <- c(ll.Qs, ll.Q)
           ul.Qs <- c(ul.Qs, ul.Q)
-          fisher <- c(fisher, stats::fisher.test(dum_tab[,col], data[[vars_dep]], conf.level = 1-alpha)$p.value)
+          fisher <- c(fisher, stats::fisher.test(dum_tab[,col], data[[vars_dep]], , conf.level = 1-alpha)$p.value)
         }
       } else {
         #print(var)

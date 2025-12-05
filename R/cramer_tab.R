@@ -27,17 +27,19 @@ get_list <- function(name_var = NULL) {
 #' @param var A list of variable name you want to compute "metric" on
 #' @param metric Choose between 'Cramer' or 'YuleQ' parameter to select one of this metrics
 #' @param df The data table you want to compute 'metric' parameter on
+#' @param weight The weight vector if there is one in the dataframe
 #'
 #' @returns A list of gt information
 #' @importFrom rcompanion cramerV
 #' @import gt
 #' @importFrom stats cor
 #' @importFrom stats chisq.test
+#' @import weights
 #' @export
 #'
 #' @examples
 #' cramer_tab(c("var_1", "var_2"), metric = 'cramer', df = df)
-cramer_tab <- function(var = NULL, metric = 'cramer', df = NULL) {
+cramer_tab <- function(var = NULL, metric = 'cramer', df = NULL, weight = NULL) {
   vec_metric <- get_list(var)
   vec_chi <- get_list(var)
   if (length(var) == 0) {
@@ -51,10 +53,14 @@ cramer_tab <- function(var = NULL, metric = 'cramer', df = NULL) {
       if (x != y) {
         #print(paste(x, "-" ,y))
         if (metric == 'cramer') {
-          vec_metric[[x]][y] <- rcompanion::cramerV(df[[x]], df[[y]])[['Cramer V']]
-          vec_chi[[x]][y] <- round(chisq.test(df[[x]], df[[y]])$p.value, 5)
-        } else if (metric == 'yuleQ') {
-          print('no yule')
+          N = length(df[[x]])
+          chi2 <- weights::wtd.chi.sq(var1 = df[[x]], var2 = df[[y]], weight = weight)
+          Phi = chi2[["Chisq"]]/N
+          Row = length(unique(df[[x]]))
+          C = length(unique(df[[y]]))
+          Cramer.V = sqrt(Phi/min(Row - 1, C - 1))
+          vec_metric[[x]][y] <- round(Cramer.V, 5)
+          vec_chi[[x]][y] <- round(chi2[["p.value"]], 5)
         } else if (metric == 'cor') {
           vec_metric[[x]][y] <- stats::cor(df[[x]], df[[y]])
         }
