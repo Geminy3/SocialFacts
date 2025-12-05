@@ -9,7 +9,8 @@ get_yuleq(
   name_var = c(),
   data = NULL,
   source = "",
-  alpha = 0.01
+  alpha = 0.01,
+  weight = NULL
 )
 }
 \arguments{
@@ -22,6 +23,8 @@ get_yuleq(
 \item{source}{A string with the name of the data source}
 
 \item{alpha}{A integer with the alpha value for fisher.test and IC}
+
+\item{weight}{A vector with weigths corresponding to the dataframe individuals weights}
 }
 \value{
 A gt table with the Yule's computed for the variable in name_var

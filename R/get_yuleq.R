@@ -8,21 +8,26 @@
 #' @param data A dataframe with the variable named before
 #' @param source A string with the name of the data source
 #' @param alpha A integer with the alpha value for fisher.test and IC
+#' @param weight A vector with weigths corresponding to the dataframe individuals weights
 #'
 #' @returns A gt table with the Yule's computed for the variable in name_var
 #' @import gt
 #' @importFrom psych dummy.code
 #' @importFrom stats fisher.test
 #' @importFrom stats qnorm
+#' @importFrom questionr wtd.table
 #' @export
 #'
 #' @examples
 #' \dontrun{get_yuleq(vars_dep = "dependant_var", name_var = c("var_1", "var_2"),
 #'                     data = data, source = "dataSource - Year", alpha = 0.01)}
-get_yuleq <- function(vars_dep = NULL, name_var = c(), data = NULL, source = "", alpha = 0.01) {
+get_yuleq <- function(vars_dep = NULL, name_var = c(), data = NULL, source = "", alpha = 0.01, weight = NULL) {
 
   if (is.null(vars_dep)) {
     return("No dependant variable")
+  }
+  if (length(unique(data[[vars_dep]])) > 2) {
+    return("Vars dep has more than 2 modalities !")
   }
   if (length(name_var) < 1) {
     return("No variable to compute Yule's Q on")
@@ -41,17 +46,27 @@ get_yuleq <- function(vars_dep = NULL, name_var = c(), data = NULL, source = "",
   for (var in name_var) {
     if (var != vars_dep) {
       if (length(unique(data[[var]])) > 2) {
+        # Create dummies variable
         dum_tab <- psych::dummy.code(data[[var]])
-        #print(colnames(dum_tab))
-        for (col in colnames(dum_tab)) {
-          #print(col)
-          #print(dum_tab[,col])
-          t <- table(dum_tab[,col], data[[vars_dep]])
+        column <- sort.list(colnames(dum_tab))
+        column <- colnames(dum_tab[,column])
+        for (col in column) {
+
+          # Weigthed table if weight variable is filled
+          if (!is.null(weight)) {
+            t <- wtd.table(dum_tab[,col], data[[vars_dep]], weight = weight)
+          } else {
+            t <- table(dum_tab[,col], data[[vars_dep]])
+          }
+
           #print(t)
+
+          # Get pairs for Yule Q
           pair_conco = t[1] * t[4]
           pair_disco = t[2] * t[3]
           Yule = (pair_conco - pair_disco) / (pair_conco + pair_disco)
 
+          # Compute OR for CI
           or <- (t[4] + 0.5) * (t[1] + 0.5)/((t[2] + 0.5) * (t[3] + 0.5))
           se.lor <- sqrt(1/(t[1] + 0.5) + 1/(t[2] + 0.5) + 1/(t[3] + 0.5) +
                            1/(t[4] + 0.5))
@@ -62,29 +77,56 @@ get_yuleq <- function(vars_dep = NULL, name_var = c(), data = NULL, source = "",
           ll.Q <- (ll.or - 1)/(ll.or + 1)
           ul.Q <- (ul.or - 1)/(ul.or + 1)
 
+          #Fill the vectors
           vars <- c(vars, var)
           modas <- c(modas, col)
           yules <- c(yules, Yule)
-          #Qs <- c(Qs, Q)
           se.Qs <- c(se.Qs, se.Q)
           ll.Qs <- c(ll.Qs, ll.Q)
           ul.Qs <- c(ul.Qs, ul.Q)
-          fisher <- c(fisher, stats::fisher.test(dum_tab[,col], data[[vars_dep]], , conf.level = 1-alpha)$p.value)
+          fisher <- c(fisher, stats::fisher.test(t, , conf.level = 1-alpha)$p.value)
         }
       } else {
-        #print(var)
-        t <- table(data[[var]], data[[vars_dep]])
-        #print(t)
+        # Convert to factor if not
+        if (!is.factor(data[,var])) {
+          data[,var] <- as.factor(data[,var])
+        }
+
+        # Get the levels
         ref <- levels(data[,var])[1]
         col <- levels(data[,var])[2]
+
+        # Weigthed table if weight variable is filled
+        if (!is.null(weight)) {
+          t <- wtd.table(data[,var], data[[vars_dep]], weight = weight)
+        } else {
+          t <- table(data[[var]], data[[vars_dep]])
+        }
+
+        #print(t)
+
+        # Get pairs for Yule Q
         pair_conco = t[1] * t[4]
         pair_disco = t[2] * t[3]
         Yule = (pair_conco - pair_disco) / (pair_conco + pair_disco)
+
+        # Compute OR for CI
+        or <- (t[4] + 0.5) * (t[1] + 0.5)/((t[2] + 0.5) * (t[3] + 0.5))
+        se.lor <- sqrt(1/(t[1] + 0.5) + 1/(t[2] + 0.5) + 1/(t[3] + 0.5) +
+                         1/(t[4] + 0.5))
+        ll.or <- exp(log(or) - z * se.lor)
+        ul.or <- exp(log(or) + z * se.lor)
+        Q <- (or - 1)/(or + 1)
+        se.Q <- 0.5 * (1 - Q^2) * se.lor
+        ll.Q <- (ll.or - 1)/(ll.or + 1)
+        ul.Q <- (ul.or - 1)/(ul.or + 1)
+
         #print(Yule)
+
+        #Fill the vectors
         vars <- c(vars, var)
         modas <- c(modas, ref)
         yules <- c(yules, NA)
-        #Qs <- c(Qs, NA)
         se.Qs <- c(se.Qs, NA)
         ll.Qs <- c(ll.Qs, NA)
         ul.Qs <- c(ul.Qs, NA)
@@ -92,17 +134,16 @@ get_yuleq <- function(vars_dep = NULL, name_var = c(), data = NULL, source = "",
         vars <- c(vars, var)
         modas <- c(modas, col)
         yules <- c(yules, Yule)
-        #Qs <- c(Qs, Q)
         se.Qs <- c(se.Qs, se.Q)
         ll.Qs <- c(ll.Qs, ll.Q)
         ul.Qs <- c(ul.Qs, ul.Q)
-        fisher <- c(fisher, stats::fisher.test(data[,var], data[[vars_dep]], conf.level = 1-alpha)$p.value)
+        fisher <- c(fisher, stats::fisher.test(t, conf.level = 1-alpha, )$p.value)
       }
     }
   }
   YuleQ <- list("var" = vars, "moda" = modas, "YuleQ" = yules,
                 "se.Q" = se.Qs, "ll" = ll.Qs, "ul" = ul.Qs, "p.value" = fisher)
-  # print(YuleQ)
+  #print(YuleQ)
   YuleQ <- YuleQ |>
     as.data.frame() |>
     gt(groupname_col = "var", row_group_as_column = T) |>

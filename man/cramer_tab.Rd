@@ -4,7 +4,7 @@
 \alias{cramer_tab}
 \title{get_cramer}
 \usage{
-cramer_tab(var = NULL, metric = "cramer", df = NULL)
+cramer_tab(var = NULL, metric = "cramer", df = NULL, weight = NULL)
 }
 \arguments{
 \item{var}{A list of variable name you want to compute "metric" on}
@@ -12,6 +12,8 @@ cramer_tab(var = NULL, metric = "cramer", df = NULL)
 \item{metric}{Choose between 'Cramer' or 'YuleQ' parameter to select one of this metrics}
 
 \item{df}{The data table you want to compute 'metric' parameter on}
+
+\item{weight}{The weight vector if there is one in the dataframe}
 }
 \value{
 A list of gt information
