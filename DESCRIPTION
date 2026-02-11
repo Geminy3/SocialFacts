@@ -25,7 +25,10 @@ Imports:
     weights, 
     questionr
 Suggests: 
+    knitr,
+    rmarkdown,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
-Remotes:  
+Remotes: 
     johnfergusonnuig/graphpaf
+VignetteBuilder: knitr
