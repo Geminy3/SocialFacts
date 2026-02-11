@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Massein"
+  given-names: "Alioscha"
+  orcid: "https://orcid.org/0009-0005-5791-1045"
+- family-names: "Lefèvre"
+  given-names: "Brice"
+  orcid: "https://orcid.org/0000-0002-2482-7104"
+title: "SocialFacts"
+version: 1.0.0
+date-released: 2026-02-11
+url: "https://github.com/Geminy3/SocialFacts"
