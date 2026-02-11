@@ -2,6 +2,7 @@
 # SocialFacts
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/Geminy3/SocialFacts/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/Geminy3/SocialFacts/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 SocialFacts brings a tool to produce easily multiple indicators commonly used in social sciences : 
