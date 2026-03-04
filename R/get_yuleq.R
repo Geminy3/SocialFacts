@@ -1,3 +1,5 @@
+globalVariables(c("ul", "ll", 'p.value'))
+
 #' @title Get Yule's Q
 #'
 #' @description
@@ -58,7 +60,7 @@ get_yuleq <- function(vars_dep = NULL, name_var = c(), data = NULL, source = "",
 
           # Weigthed table if weight variable is filled
           if (!is.null(weight)) {
-            t <- wtd.table(dum_tab[,col], data[[vars_dep]], weight = weight)
+            t <- wtd.table(dum_tab[,col], data[[vars_dep]], weights = weight)
           } else {
             t <- table(dum_tab[,col], data[[vars_dep]])
           }
@@ -102,7 +104,7 @@ get_yuleq <- function(vars_dep = NULL, name_var = c(), data = NULL, source = "",
 
         # Weigthed table if weight variable is filled
         if (!is.null(weight)) {
-          t <- wtd.table(data[,var], data[[vars_dep]], weight = weight)
+          t <- wtd.table(data[,var], data[[vars_dep]], weights = weight)
         } else {
           t <- table(data[[var]], data[[vars_dep]])
         }
