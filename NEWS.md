@@ -1,3 +1,5 @@
+# SocialFacts 1.2.1
+
 # SocialFacts 1.2.0
 
 * First CRAN submission
