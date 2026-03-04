@@ -13,13 +13,13 @@ Source:
 [`DESCRIPTION`](https://github.com/Geminy3/SocialFacts/blob/main/DESCRIPTION)
 
 Massein A, Lefèvre B (2026). *SocialFacts: Average Attributable Fraction
-and Other Relevant Social Sciences Indicators*. R package version 1.2.0,
+and Other Relevant Social Sciences Indicators*. R package version 1.2.1,
 <https://github.com/Geminy3/SocialFacts>.
 
     @Manual{,
       title = {SocialFacts: Average Attributable Fraction and Other Relevant Social Sciences Indicators},
       author = {Alioscha Massein and Brice Lefèvre},
       year = {2026},
-      note = {R package version 1.2.0},
+      note = {R package version 1.2.1},
       url = {https://github.com/Geminy3/SocialFacts},
     }
