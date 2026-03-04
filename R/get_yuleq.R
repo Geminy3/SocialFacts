@@ -16,12 +16,16 @@
 #' @importFrom stats fisher.test
 #' @importFrom stats qnorm
 #' @importFrom questionr wtd.table
+#' @import graphPAF
 #' @export
 #'
 #' @examples
-#' \dontrun{get_yuleq(vars_dep = "dependant_var", name_var = c("var_1", "var_2"),
-#'                     data = data, source = "dataSource - Year", alpha = 0.01)}
-get_yuleq <- function(vars_dep = NULL, name_var = c(), data = NULL, source = "", alpha = 0.01, weight = NULL) {
+#' data <- graphPAF::Hordaland_data
+#' get_yuleq(vars_dep = "y", name_var = c("y",  "urban.rural"),
+#'                     data = data, source = "dataSource - Year",
+#'                     alpha = 0.01)
+get_yuleq <- function(vars_dep = NULL, name_var = c(), data = NULL, source = "",
+                      alpha = 0.01, weight = NULL) {
 
   if (is.null(vars_dep)) {
     return("No dependant variable")

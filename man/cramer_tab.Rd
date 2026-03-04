@@ -4,14 +4,14 @@
 \alias{cramer_tab}
 \title{get_cramer}
 \usage{
-cramer_tab(var = NULL, metric = "cramer", df = NULL, weight = NULL)
+cramer_tab(var = NULL, metric = "cramer", data = NULL, weight = NULL)
 }
 \arguments{
 \item{var}{A list of variable name you want to compute "metric" on}
 
 \item{metric}{Choose between 'Cramer' or 'YuleQ' parameter to select one of this metrics}
 
-\item{df}{The data table you want to compute 'metric' parameter on}
+\item{data}{The data table you want to compute 'metric' parameter on}
 
 \item{weight}{The weight vector if there is one in the dataframe}
 }
@@ -22,5 +22,6 @@ A list of gt information
 Get Cramer or YuleQ's tab
 }
 \examples{
-cramer_tab(c("var_1", "var_2"), metric = 'cramer', df = df)
+data <- graphPAF::Hordaland_data
+cramer_tab(c("y", "urban.rural"), metric = 'cramer', data = data)
 }

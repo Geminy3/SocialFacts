@@ -33,6 +33,8 @@ A gt table with the Yule's computed for the variable in name_var
 Get Yule's Q
 }
 \examples{
-\dontrun{get_yuleq(vars_dep = "dependant_var", name_var = c("var_1", "var_2"),
-                    data = data, source = "dataSource - Year", alpha = 0.01)}
+data <- graphPAF::Hordaland_data
+get_yuleq(vars_dep = "y", name_var = c("y",  "urban.rural"),
+                    data = data, source = "dataSource - Year",
+                    alpha = 0.01)
 }
