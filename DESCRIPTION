@@ -6,7 +6,7 @@ Authors@R: c(
       person("Brice", "Lefèvre", email = "brice.lefevre@univ-lyon1.fr", role = c("aut"), comment = c(ORCID = "0000-0002-2482-7104"))
     )
 Description: This package helps you to compute AAF production, and produce a GT table with OR, AME and AAF, with CI and p.value.
-License: CC BY 4.0
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3
@@ -14,7 +14,7 @@ Imports:
     averisk,
     broom.helpers,
     dplyr,
-    graphPAF (>= 2.0.0),
+    graphPAF (>= 2.0.1),
     gt,
     psych,
     gtsummary,
@@ -29,6 +29,4 @@ Suggests:
     rmarkdown,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
-Remotes: 
-    johnfergusonnuig/graphpaf
 VignetteBuilder: knitr
