@@ -10,7 +10,7 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/Geminy3/SocialFacts/blob/main/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/Geminy3/SocialFacts/blob/v1.2.1/DESCRIPTION)
 
 Massein A, Lefèvre B (2026). *SocialFacts: Average Attributable Fraction
 and Other Relevant Social Sciences Indicators*. R package version 1.2.1,
