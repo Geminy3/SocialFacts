@@ -43,7 +43,6 @@ glmmodel <- glm(var_dep ~ var_1 + var_2, data = data, family = binomial("logit")
 res <- get_AAF(model = glmmodel, nvar = 3, vars_dep = "var_dep", data = data,
                nbootstrap = 5)
 
-## Somehow, it crashes in example while it's working when used as a regular function
 \dontrun{res_tab <- result_tab(model = glmmodel, var_ref = "var_dep",
                       var_names = c("var_1", "var_2"),
                       res_AAF = resAAF$res, source = "TESTDATA", data = data)}

@@ -18,7 +18,12 @@ We use the original `graphPAF` library, and facilitate it's use to produce a tab
 You can install the development version of SocialFacts like so:
 
 ``` r
-# devtools::install_github("Geminy3/SocialFacts")
+devtools::install_github("Geminy3/SocialFacts")
+```
+
+of install it via CRAN :
+```r
+install.packages("SocialFacts")
 ```
 
 ## Example

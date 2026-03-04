@@ -1,6 +1,6 @@
 Package: SocialFacts
-Title: SocialFacts : A package to resume Social sciences indicators
-Version: 1.0.0
+Title: Average Attributable Fraction and Other Relevant Social Sciences Indicators
+Version: 1.1.0
 Authors@R: c(
       person("Alioscha", "Massein", email = "alioscha.massein@cnrs.fr", role = c("aut", "cre", 'cph'), comment = c(ORCID = "0009-0005-5791-1045")),
       person("Brice", "Lefèvre", email = "brice.lefevre@univ-lyon1.fr", role = c("aut"), comment = c(ORCID = "0000-0002-2482-7104"))
@@ -33,6 +33,5 @@ Suggests:
     rmarkdown,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
-VignetteBuilder: knitr
 URL: https://github.com/Geminy3/SocialFacts
 BugReports: https://github.com/Geminy3/SocialFacts/issues
