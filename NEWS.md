@@ -1,3 +1,5 @@
+# SocialFacts 1.2.3
+
 # SocialFacts 1.2.2
 
 * add DOI and author information on the description of the AAF in the description of the package.
