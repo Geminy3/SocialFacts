@@ -5,7 +5,7 @@ Authors@R: c(
       person("Alioscha", "Massein", email = "alioscha.massein@cnrs.fr", role = c("aut", "cre", 'cph'), comment = c(ORCID = "0009-0005-5791-1045")),
       person("Brice", "Lefèvre", email = "brice.lefevre@univ-lyon1.fr", role = c("aut"), comment = c(ORCID = "0000-0002-2482-7104"))
     )
-Description: This package helps you to compute AAF production, and produce a GT table with OR, AME and AAF, with CI and p.value. It also propose other metrics such as Yule's Q and Cramer's V.
+Description: Compute AAF (Fergusion and al., 2024, <10.1007/s10654-024-01129-1>) production, and produce a GT table with OR, AME and AAF, with CI and p.value. Also compute other metrics such as Yule's Q and Cramer's V.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
