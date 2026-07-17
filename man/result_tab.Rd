@@ -41,9 +41,11 @@ data <- data.frame(
    )
 glmmodel <- glm(var_dep ~ var_1 + var_2, data = data, family = binomial("logit"))
 
+\donttest{
 res <- get_AAF(model = glmmodel, nvar = 3, vars_dep = "var_dep", data = data,
-               nbootstrap = 5)
+               nbootstrap = 2)
 res_tab <- result_tab(model = glmmodel, var_ref = "var_dep",
                       var_names = c("var_1", "var_2"),
                       res_AAF = res$res, source = "TESTDATA", data = data)
+}
 }

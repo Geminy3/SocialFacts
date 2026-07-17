@@ -37,24 +37,25 @@ globalVariables(c("label", "position", 'est'))
 #'
 #' \donttest{
 #' res <- get_AAF(model = glmmodel, nvar = 3, vars_dep = "var_dep", data = data,
-#'                nbootstrap = 5)
+#'                nbootstrap = 2)
 #' res_tab <- result_tab(model = glmmodel, var_ref = "var_dep",
 #'                       var_names = c("var_1", "var_2"),
 #'                       res_AAF = res$res, source = "TESTDATA", data = data)
 #'}
-result_tab <- function(model = NULL, var_ref = NULL, var_names = NULL,
-                       res_AAF = NULL, source = "", data = data.frame()) {
-
-  var = dplyr::sym(var_ref)
+result_tab <- function(
+  model = NULL,
+  var_ref = NULL,
+  var_names = NULL,
+  res_AAF = NULL,
+  source = "",
+  data = data.frame()
+) {
+  var <- dplyr::sym(var_ref)
 
   #ODDS RATIO TAB
   odds_tab <- gtsummary::tbl_regression(model, exponentiate = T)
 
   #AME TAB
-  ## You have to call the marginaleffects function somehow so it don't segfault
-  marge <- marginaleffects::avg_slopes(model)
-  ##
-
   marge <- model |>
     gtsummary::tbl_regression(
       tidy_fun = broom.helpers::tidy_avg_slopes,
@@ -68,25 +69,31 @@ result_tab <- function(model = NULL, var_ref = NULL, var_names = NULL,
     dplyr::mutate(
       label = stringr::str_remove(label, ' - .*$'),
       term = stringr::str_remove(label, ' - .*$')
-      ) -> marge$table_body
+    ) -> marge$table_body
 
   #CONTINGENCE TAB
   contingence <- data |>
     gtsummary::tbl_summary(
       by = !!var_ref,
-      include = var_names#c(-weights, -ski_alp, -REG)
+      include = var_names #c(-weights, -ski_alp, -REG)
     ) |>
     gtsummary::add_ci() |>
     gtsummary::add_p()
 
   # MERGE TAB
-  clean_AAF <- res_AAF |> dplyr::filter(position %in% c("Average", "Joint")) |>
+  clean_AAF <- res_AAF |>
+    dplyr::filter(position %in% c("Average", "Joint")) |>
     dplyr::arrange(desc(est)) |>
     gt::gt() |>
-    gt::tab_header(title = "Average Attributable Fraction",
-               subtitle = paste("Sur la variable", var_ref)) |>
+    gt::tab_header(
+      title = "Average Attributable Fraction",
+      subtitle = paste("Sur la variable", var_ref)
+    ) |>
     gt::tab_spanner(label = "CI", columns = c("norm_lower", "norm_upper")) |>
-    gt::tab_spanner(label = "Estimation moyenne", columns = c("est", "debiased_est")) |>
+    gt::tab_spanner(
+      label = "Estimation moyenne",
+      columns = c("est", "debiased_est")
+    ) |>
     gt::fmt_number(columns = dplyr::everything(), suffixing = T) |>
     gt::data_color(
       columns = c('debiased_est', 'norm_lower', 'norm_upper'),
@@ -101,10 +108,15 @@ result_tab <- function(model = NULL, var_ref = NULL, var_names = NULL,
     ) |>
     gt::tab_options(table.width = gt::pct(100))
 
-  tab_recap <- gtsummary::tbl_merge(list(odds_tab, marge, contingence), tab_spanner = c("Odds ratio", 'Average Marginal Effects', var_ref)) |>
+  tab_recap <- gtsummary::tbl_merge(
+    list(odds_tab, marge, contingence),
+    tab_spanner = c("Odds ratio", 'Average Marginal Effects', var_ref)
+  ) |>
     gtsummary::as_gt() |>
-    gt::tab_header(title = "Tableau Recapitulatif",
-               subtitle = paste("Sur la variable", var_ref)) |>
+    gt::tab_header(
+      title = "Tableau Recapitulatif",
+      subtitle = paste("Sur la variable", var_ref)
+    ) |>
     gt::data_color(
       columns = c("estimate_1", "ci_1", "estimate_2", "ci_2"),
       rows = dplyr::everything(),

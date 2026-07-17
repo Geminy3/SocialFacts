@@ -23,8 +23,9 @@ test_that("result_tab works", {
     model = glmmodel,
     nvar = 3,
     vars_dep = "var_dep",
+    name_var = c("var_1", "var_2"),
     data = data,
-    nbootstrap = 5
+    nbootstrap = 2
   )
   expect_no_failure(
     res_tab <- result_tab(

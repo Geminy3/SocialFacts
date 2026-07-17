@@ -61,7 +61,7 @@ get_AAF <- function(
   parent_vec <- vars_vec[1:length(vars_vec) - 1]
   node <- vars_vec[1:length(vars_vec)]
 
-  message("COMPUTE")
+  message("COMPUTE AAF")
 
   models <- graphPAF::automatic_fit(
     graphPAF::data_clean(data, vars = vars_vec, model = model),
