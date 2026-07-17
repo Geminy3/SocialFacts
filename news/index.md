@@ -1,6 +1,15 @@
 # Changelog
 
+## SocialFacts 1.2.3
+
+## SocialFacts 1.2.2
+
+- add DOI and author information on the description of the AAF in the
+  description of the package.
+
 ## SocialFacts 1.2.1
+
+- Update Description.md information with CRAN review of the package.
 
 ## SocialFacts 1.2.0
 

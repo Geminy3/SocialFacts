@@ -37,23 +37,23 @@ A list of gt information
 data <- graphPAF::Hordaland_data
 cramer_tab(c("y", "urban.rural"), metric = 'cramer', data = data)
 #> $chi2
-#> <div id="lefoodfiee" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-#>   <style>#lefoodfiee table {
+#> <div id="mwlefoodfi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+#>   <style>#mwlefoodfi table {
 #>   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 #>   -webkit-font-smoothing: antialiased;
 #>   -moz-osx-font-smoothing: grayscale;
 #> }
 #> 
-#> #lefoodfiee thead, #lefoodfiee tbody, #lefoodfiee tfoot, #lefoodfiee tr, #lefoodfiee td, #lefoodfiee th {
+#> #mwlefoodfi thead, #mwlefoodfi tbody, #mwlefoodfi tfoot, #mwlefoodfi tr, #mwlefoodfi td, #mwlefoodfi th {
 #>   border-style: none;
 #> }
 #> 
-#> #lefoodfiee p {
+#> #mwlefoodfi p {
 #>   margin: 0;
 #>   padding: 0;
 #> }
 #> 
-#> #lefoodfiee .gt_table {
+#> #mwlefoodfi .gt_table {
 #>   display: table;
 #>   border-collapse: collapse;
 #>   line-height: normal;
@@ -79,12 +79,12 @@ cramer_tab(c("y", "urban.rural"), metric = 'cramer', data = data)
 #>   border-left-color: #D3D3D3;
 #> }
 #> 
-#> #lefoodfiee .gt_caption {
+#> #mwlefoodfi .gt_caption {
 #>   padding-top: 4px;
 #>   padding-bottom: 4px;
 #> }
 #> 
-#> #lefoodfiee .gt_title {
+#> #mwlefoodfi .gt_title {
 #>   color: #333333;
 #>   font-size: 125%;
 #>   font-weight: initial;
@@ -96,7 +96,7 @@ cramer_tab(c("y", "urban.rural"), metric = 'cramer', data = data)
 #>   border-bottom-width: 0;
 #> }
 #> 
-#> #lefoodfiee .gt_subtitle {
+#> #mwlefoodfi .gt_subtitle {
 #>   color: #333333;
 #>   font-size: 85%;
 #>   font-weight: initial;
@@ -108,7 +108,7 @@ cramer_tab(c("y", "urban.rural"), metric = 'cramer', data = data)
 #>   border-top-width: 0;
 #> }
 #> 
-#> #lefoodfiee .gt_heading {
+#> #mwlefoodfi .gt_heading {
 #>   background-color: #FFFFFF;
 #>   text-align: center;
 #>   border-bottom-color: #FFFFFF;
@@ -120,13 +120,13 @@ cramer_tab(c("y", "urban.rural"), metric = 'cramer', data = data)
 #>   border-right-color: #D3D3D3;
 #> }
 #> 
-#> #lefoodfiee .gt_bottom_border {
+#> #mwlefoodfi .gt_bottom_border {
 #>   border-bottom-style: solid;
 #>   border-bottom-width: 2px;
 #>   border-bottom-color: #D3D3D3;
 #> }
 #> 
-#> #lefoodfiee .gt_col_headings {
+#> #mwlefoodfi .gt_col_headings {
 #>   border-top-style: solid;
 #>   border-top-width: 2px;
 #>   border-top-color: #D3D3D3;
@@ -141,7 +141,7 @@ cramer_tab(c("y", "urban.rural"), metric = 'cramer', data = data)
 #>   border-right-color: #D3D3D3;
 #> }
 #> 
-#> #lefoodfiee .gt_col_heading {
+#> #mwlefoodfi .gt_col_heading {
 #>   color: #333333;
 #>   background-color: #FFFFFF;
 #>   font-size: 100%;
@@ -161,7 +161,7 @@ cramer_tab(c("y", "urban.rural"), metric = 'cramer', data = data)
 #>   overflow-x: hidden;
 #> }
 #> 
-#> #lefoodfiee .gt_column_spanner_outer {
+#> #mwlefoodfi .gt_column_spanner_outer {
 #>   color: #333333;
 #>   background-color: #FFFFFF;
 #>   font-size: 100%;
@@ -173,15 +173,15 @@ cramer_tab(c("y", "urban.rural"), metric = 'cramer', data = data)
 #>   padding-right: 4px;
 #> }
 #> 
-#> #lefoodfiee .gt_column_spanner_outer:first-child {
+#> #mwlefoodfi .gt_column_spanner_outer:first-child {
 #>   padding-left: 0;
 #> }
 #> 
-#> #lefoodfiee .gt_column_spanner_outer:last-child {
+#> #mwlefoodfi .gt_column_spanner_outer:last-child {
 #>   padding-right: 0;
 #> }
 #> 
-#> #lefoodfiee .gt_column_spanner {
+#> #mwlefoodfi .gt_column_spanner {
 #>   border-bottom-style: solid;
 #>   border-bottom-width: 2px;
 #>   border-bottom-color: #D3D3D3;
@@ -193,11 +193,11 @@ cramer_tab(c("y", "urban.rural"), metric = 'cramer', data = data)
 #>   width: 100%;
 #> }
 #> 
-#> #lefoodfiee .gt_spanner_row {
+#> #mwlefoodfi .gt_spanner_row {
 #>   border-bottom-style: hidden;
 #> }
 #> 
-#> #lefoodfiee .gt_group_heading {
+#> #mwlefoodfi .gt_group_heading {
 #>   padding-top: 8px;
 #>   padding-bottom: 8px;
 #>   padding-left: 5px;
@@ -223,7 +223,7 @@ cramer_tab(c("y", "urban.rural"), metric = 'cramer', data = data)
 #>   text-align: left;
 #> }
 #> 
-#> #lefoodfiee .gt_empty_group_heading {
+#> #mwlefoodfi .gt_empty_group_heading {
 #>   padding: 0.5px;
 #>   color: #333333;
 #>   background-color: #FFFFFF;
@@ -238,15 +238,15 @@ cramer_tab(c("y", "urban.rural"), metric = 'cramer', data = data)
 #>   vertical-align: middle;
 #> }
 #> 
-#> #lefoodfiee .gt_from_md > :first-child {
+#> #mwlefoodfi .gt_from_md > :first-child {
 #>   margin-top: 0;
 #> }
 #> 
-#> #lefoodfiee .gt_from_md > :last-child {
+#> #mwlefoodfi .gt_from_md > :last-child {
 #>   margin-bottom: 0;
 #> }
 #> 
-#> #lefoodfiee .gt_row {
+#> #mwlefoodfi .gt_row {
 #>   padding-top: 8px;
 #>   padding-bottom: 8px;
 #>   padding-left: 5px;
@@ -265,7 +265,7 @@ cramer_tab(c("y", "urban.rural"), metric = 'cramer', data = data)
 #>   overflow-x: hidden;
 #> }
 #> 
-#> #lefoodfiee .gt_stub {
+#> #mwlefoodfi .gt_stub {
 #>   color: #333333;
 #>   background-color: #FFFFFF;
 #>   font-size: 100%;
@@ -278,7 +278,7 @@ cramer_tab(c("y", "urban.rural"), metric = 'cramer', data = data)
 #>   padding-right: 5px;
 #> }
 #> 
-#> #lefoodfiee .gt_stub_row_group {
+#> #mwlefoodfi .gt_stub_row_group {
 #>   color: #333333;
 #>   background-color: #FFFFFF;
 #>   font-size: 100%;
@@ -292,15 +292,15 @@ cramer_tab(c("y", "urban.rural"), metric = 'cramer', data = data)
 #>   vertical-align: top;
 #> }
 #> 
-#> #lefoodfiee .gt_row_group_first td {
+#> #mwlefoodfi .gt_row_group_first td {
 #>   border-top-width: 2px;
 #> }
 #> 
-#> #lefoodfiee .gt_row_group_first th {
+#> #mwlefoodfi .gt_row_group_first th {
 #>   border-top-width: 2px;
 #> }
 #> 
-#> #lefoodfiee .gt_summary_row {
+#> #mwlefoodfi .gt_summary_row {
 #>   color: #333333;
 #>   background-color: #FFFFFF;
 #>   text-transform: inherit;
@@ -310,16 +310,16 @@ cramer_tab(c("y", "urban.rural"), metric = 'cramer', data = data)
 #>   padding-right: 5px;
 #> }
 #> 
-#> #lefoodfiee .gt_first_summary_row {
+#> #mwlefoodfi .gt_first_summary_row {
 #>   border-top-style: solid;
 #>   border-top-color: #D3D3D3;
 #> }
 #> 
-#> #lefoodfiee .gt_first_summary_row.thick {
+#> #mwlefoodfi .gt_first_summary_row.thick {
 #>   border-top-width: 2px;
 #> }
 #> 
-#> #lefoodfiee .gt_last_summary_row {
+#> #mwlefoodfi .gt_last_summary_row {
 #>   padding-top: 8px;
 #>   padding-bottom: 8px;
 #>   padding-left: 5px;
@@ -329,7 +329,7 @@ cramer_tab(c("y", "urban.rural"), metric = 'cramer', data = data)
 #>   border-bottom-color: #D3D3D3;
 #> }
 #> 
-#> #lefoodfiee .gt_grand_summary_row {
+#> #mwlefoodfi .gt_grand_summary_row {
 #>   color: #333333;
 #>   background-color: #FFFFFF;
 #>   text-transform: inherit;
@@ -339,7 +339,7 @@ cramer_tab(c("y", "urban.rural"), metric = 'cramer', data = data)
 #>   padding-right: 5px;
 #> }
 #> 
-#> #lefoodfiee .gt_first_grand_summary_row {
+#> #mwlefoodfi .gt_first_grand_summary_row {
 #>   padding-top: 8px;
 #>   padding-bottom: 8px;
 #>   padding-left: 5px;
@@ -349,7 +349,7 @@ cramer_tab(c("y", "urban.rural"), metric = 'cramer', data = data)
 #>   border-top-color: #D3D3D3;
 #> }
 #> 
-#> #lefoodfiee .gt_last_grand_summary_row_top {
+#> #mwlefoodfi .gt_last_grand_summary_row_top {
 #>   padding-top: 8px;
 #>   padding-bottom: 8px;
 #>   padding-left: 5px;
@@ -359,11 +359,11 @@ cramer_tab(c("y", "urban.rural"), metric = 'cramer', data = data)
 #>   border-bottom-color: #D3D3D3;
 #> }
 #> 
-#> #lefoodfiee .gt_striped {
+#> #mwlefoodfi .gt_striped {
 #>   background-color: rgba(128, 128, 128, 0.05);
 #> }
 #> 
-#> #lefoodfiee .gt_table_body {
+#> #mwlefoodfi .gt_table_body {
 #>   border-top-style: solid;
 #>   border-top-width: 2px;
 #>   border-top-color: #D3D3D3;
@@ -372,7 +372,7 @@ cramer_tab(c("y", "urban.rural"), metric = 'cramer', data = data)
 #>   border-bottom-color: #D3D3D3;
 #> }
 #> 
-#> #lefoodfiee .gt_footnotes {
+#> #mwlefoodfi .gt_footnotes {
 #>   color: #333333;
 #>   background-color: #FFFFFF;
 #>   border-bottom-style: none;
@@ -386,7 +386,7 @@ cramer_tab(c("y", "urban.rural"), metric = 'cramer', data = data)
 #>   border-right-color: #D3D3D3;
 #> }
 #> 
-#> #lefoodfiee .gt_footnote {
+#> #mwlefoodfi .gt_footnote {
 #>   margin: 0px;
 #>   font-size: 90%;
 #>   padding-top: 4px;
@@ -395,7 +395,7 @@ cramer_tab(c("y", "urban.rural"), metric = 'cramer', data = data)
 #>   padding-right: 5px;
 #> }
 #> 
-#> #lefoodfiee .gt_sourcenotes {
+#> #mwlefoodfi .gt_sourcenotes {
 #>   color: #333333;
 #>   background-color: #FFFFFF;
 #>   border-bottom-style: none;
@@ -409,7 +409,7 @@ cramer_tab(c("y", "urban.rural"), metric = 'cramer', data = data)
 #>   border-right-color: #D3D3D3;
 #> }
 #> 
-#> #lefoodfiee .gt_sourcenote {
+#> #mwlefoodfi .gt_sourcenote {
 #>   font-size: 90%;
 #>   padding-top: 4px;
 #>   padding-bottom: 4px;
@@ -417,72 +417,72 @@ cramer_tab(c("y", "urban.rural"), metric = 'cramer', data = data)
 #>   padding-right: 5px;
 #> }
 #> 
-#> #lefoodfiee .gt_left {
+#> #mwlefoodfi .gt_left {
 #>   text-align: left;
 #> }
 #> 
-#> #lefoodfiee .gt_center {
+#> #mwlefoodfi .gt_center {
 #>   text-align: center;
 #> }
 #> 
-#> #lefoodfiee .gt_right {
+#> #mwlefoodfi .gt_right {
 #>   text-align: right;
 #>   font-variant-numeric: tabular-nums;
 #> }
 #> 
-#> #lefoodfiee .gt_font_normal {
+#> #mwlefoodfi .gt_font_normal {
 #>   font-weight: normal;
 #> }
 #> 
-#> #lefoodfiee .gt_font_bold {
+#> #mwlefoodfi .gt_font_bold {
 #>   font-weight: bold;
 #> }
 #> 
-#> #lefoodfiee .gt_font_italic {
+#> #mwlefoodfi .gt_font_italic {
 #>   font-style: italic;
 #> }
 #> 
-#> #lefoodfiee .gt_super {
+#> #mwlefoodfi .gt_super {
 #>   font-size: 65%;
 #> }
 #> 
-#> #lefoodfiee .gt_footnote_marks {
+#> #mwlefoodfi .gt_footnote_marks {
 #>   font-size: 75%;
 #>   vertical-align: 0.4em;
 #>   position: initial;
 #> }
 #> 
-#> #lefoodfiee .gt_asterisk {
+#> #mwlefoodfi .gt_asterisk {
 #>   font-size: 100%;
 #>   vertical-align: 0;
 #> }
 #> 
-#> #lefoodfiee .gt_indent_1 {
+#> #mwlefoodfi .gt_indent_1 {
 #>   text-indent: 5px;
 #> }
 #> 
-#> #lefoodfiee .gt_indent_2 {
+#> #mwlefoodfi .gt_indent_2 {
 #>   text-indent: 10px;
 #> }
 #> 
-#> #lefoodfiee .gt_indent_3 {
+#> #mwlefoodfi .gt_indent_3 {
 #>   text-indent: 15px;
 #> }
 #> 
-#> #lefoodfiee .gt_indent_4 {
+#> #mwlefoodfi .gt_indent_4 {
 #>   text-indent: 20px;
 #> }
 #> 
-#> #lefoodfiee .gt_indent_5 {
+#> #mwlefoodfi .gt_indent_5 {
 #>   text-indent: 25px;
 #> }
 #> 
-#> #lefoodfiee .katex-display {
+#> #mwlefoodfi .katex-display {
 #>   display: inline-flex !important;
 #>   margin-bottom: 0.75em !important;
 #> }
 #> 
-#> #lefoodfiee div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#> #mwlefoodfi div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
 #>   height: 0px !important;
 #> }
 #> </style>
@@ -514,23 +514,23 @@ cramer_tab(c("y", "urban.rural"), metric = 'cramer', data = data)
 #> </div>
 #> 
 #> $metric
-#> <div id="keulbfdpbc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-#>   <style>#keulbfdpbc table {
+#> <div id="wkkeulbfdp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+#>   <style>#wkkeulbfdp table {
 #>   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 #>   -webkit-font-smoothing: antialiased;
 #>   -moz-osx-font-smoothing: grayscale;
 #> }
 #> 
-#> #keulbfdpbc thead, #keulbfdpbc tbody, #keulbfdpbc tfoot, #keulbfdpbc tr, #keulbfdpbc td, #keulbfdpbc th {
+#> #wkkeulbfdp thead, #wkkeulbfdp tbody, #wkkeulbfdp tfoot, #wkkeulbfdp tr, #wkkeulbfdp td, #wkkeulbfdp th {
 #>   border-style: none;
 #> }
 #> 
-#> #keulbfdpbc p {
+#> #wkkeulbfdp p {
 #>   margin: 0;
 #>   padding: 0;
 #> }
 #> 
-#> #keulbfdpbc .gt_table {
+#> #wkkeulbfdp .gt_table {
 #>   display: table;
 #>   border-collapse: collapse;
 #>   line-height: normal;
@@ -556,12 +556,12 @@ cramer_tab(c("y", "urban.rural"), metric = 'cramer', data = data)
 #>   border-left-color: #D3D3D3;
 #> }
 #> 
-#> #keulbfdpbc .gt_caption {
+#> #wkkeulbfdp .gt_caption {
 #>   padding-top: 4px;
 #>   padding-bottom: 4px;
 #> }
 #> 
-#> #keulbfdpbc .gt_title {
+#> #wkkeulbfdp .gt_title {
 #>   color: #333333;
 #>   font-size: 125%;
 #>   font-weight: initial;
@@ -573,7 +573,7 @@ cramer_tab(c("y", "urban.rural"), metric = 'cramer', data = data)
 #>   border-bottom-width: 0;
 #> }
 #> 
-#> #keulbfdpbc .gt_subtitle {
+#> #wkkeulbfdp .gt_subtitle {
 #>   color: #333333;
 #>   font-size: 85%;
 #>   font-weight: initial;
@@ -585,7 +585,7 @@ cramer_tab(c("y", "urban.rural"), metric = 'cramer', data = data)
 #>   border-top-width: 0;
 #> }
 #> 
-#> #keulbfdpbc .gt_heading {
+#> #wkkeulbfdp .gt_heading {
 #>   background-color: #FFFFFF;
 #>   text-align: center;
 #>   border-bottom-color: #FFFFFF;
@@ -597,13 +597,13 @@ cramer_tab(c("y", "urban.rural"), metric = 'cramer', data = data)
 #>   border-right-color: #D3D3D3;
 #> }
 #> 
-#> #keulbfdpbc .gt_bottom_border {
+#> #wkkeulbfdp .gt_bottom_border {
 #>   border-bottom-style: solid;
 #>   border-bottom-width: 2px;
 #>   border-bottom-color: #D3D3D3;
 #> }
 #> 
-#> #keulbfdpbc .gt_col_headings {
+#> #wkkeulbfdp .gt_col_headings {
 #>   border-top-style: solid;
 #>   border-top-width: 2px;
 #>   border-top-color: #D3D3D3;
@@ -618,7 +618,7 @@ cramer_tab(c("y", "urban.rural"), metric = 'cramer', data = data)
 #>   border-right-color: #D3D3D3;
 #> }
 #> 
-#> #keulbfdpbc .gt_col_heading {
+#> #wkkeulbfdp .gt_col_heading {
 #>   color: #333333;
 #>   background-color: #FFFFFF;
 #>   font-size: 100%;
@@ -638,7 +638,7 @@ cramer_tab(c("y", "urban.rural"), metric = 'cramer', data = data)
 #>   overflow-x: hidden;
 #> }
 #> 
-#> #keulbfdpbc .gt_column_spanner_outer {
+#> #wkkeulbfdp .gt_column_spanner_outer {
 #>   color: #333333;
 #>   background-color: #FFFFFF;
 #>   font-size: 100%;
@@ -650,15 +650,15 @@ cramer_tab(c("y", "urban.rural"), metric = 'cramer', data = data)
 #>   padding-right: 4px;
 #> }
 #> 
-#> #keulbfdpbc .gt_column_spanner_outer:first-child {
+#> #wkkeulbfdp .gt_column_spanner_outer:first-child {
 #>   padding-left: 0;
 #> }
 #> 
-#> #keulbfdpbc .gt_column_spanner_outer:last-child {
+#> #wkkeulbfdp .gt_column_spanner_outer:last-child {
 #>   padding-right: 0;
 #> }
 #> 
-#> #keulbfdpbc .gt_column_spanner {
+#> #wkkeulbfdp .gt_column_spanner {
 #>   border-bottom-style: solid;
 #>   border-bottom-width: 2px;
 #>   border-bottom-color: #D3D3D3;
@@ -670,11 +670,11 @@ cramer_tab(c("y", "urban.rural"), metric = 'cramer', data = data)
 #>   width: 100%;
 #> }
 #> 
-#> #keulbfdpbc .gt_spanner_row {
+#> #wkkeulbfdp .gt_spanner_row {
 #>   border-bottom-style: hidden;
 #> }
 #> 
-#> #keulbfdpbc .gt_group_heading {
+#> #wkkeulbfdp .gt_group_heading {
 #>   padding-top: 8px;
 #>   padding-bottom: 8px;
 #>   padding-left: 5px;
@@ -700,7 +700,7 @@ cramer_tab(c("y", "urban.rural"), metric = 'cramer', data = data)
 #>   text-align: left;
 #> }
 #> 
-#> #keulbfdpbc .gt_empty_group_heading {
+#> #wkkeulbfdp .gt_empty_group_heading {
 #>   padding: 0.5px;
 #>   color: #333333;
 #>   background-color: #FFFFFF;
@@ -715,15 +715,15 @@ cramer_tab(c("y", "urban.rural"), metric = 'cramer', data = data)
 #>   vertical-align: middle;
 #> }
 #> 
-#> #keulbfdpbc .gt_from_md > :first-child {
+#> #wkkeulbfdp .gt_from_md > :first-child {
 #>   margin-top: 0;
 #> }
 #> 
-#> #keulbfdpbc .gt_from_md > :last-child {
+#> #wkkeulbfdp .gt_from_md > :last-child {
 #>   margin-bottom: 0;
 #> }
 #> 
-#> #keulbfdpbc .gt_row {
+#> #wkkeulbfdp .gt_row {
 #>   padding-top: 8px;
 #>   padding-bottom: 8px;
 #>   padding-left: 5px;
@@ -742,7 +742,7 @@ cramer_tab(c("y", "urban.rural"), metric = 'cramer', data = data)
 #>   overflow-x: hidden;
 #> }
 #> 
-#> #keulbfdpbc .gt_stub {
+#> #wkkeulbfdp .gt_stub {
 #>   color: #333333;
 #>   background-color: #FFFFFF;
 #>   font-size: 100%;
@@ -755,7 +755,7 @@ cramer_tab(c("y", "urban.rural"), metric = 'cramer', data = data)
 #>   padding-right: 5px;
 #> }
 #> 
-#> #keulbfdpbc .gt_stub_row_group {
+#> #wkkeulbfdp .gt_stub_row_group {
 #>   color: #333333;
 #>   background-color: #FFFFFF;
 #>   font-size: 100%;
@@ -769,15 +769,15 @@ cramer_tab(c("y", "urban.rural"), metric = 'cramer', data = data)
 #>   vertical-align: top;
 #> }
 #> 
-#> #keulbfdpbc .gt_row_group_first td {
+#> #wkkeulbfdp .gt_row_group_first td {
 #>   border-top-width: 2px;
 #> }
 #> 
-#> #keulbfdpbc .gt_row_group_first th {
+#> #wkkeulbfdp .gt_row_group_first th {
 #>   border-top-width: 2px;
 #> }
 #> 
-#> #keulbfdpbc .gt_summary_row {
+#> #wkkeulbfdp .gt_summary_row {
 #>   color: #333333;
 #>   background-color: #FFFFFF;
 #>   text-transform: inherit;
@@ -787,16 +787,16 @@ cramer_tab(c("y", "urban.rural"), metric = 'cramer', data = data)
 #>   padding-right: 5px;
 #> }
 #> 
-#> #keulbfdpbc .gt_first_summary_row {
+#> #wkkeulbfdp .gt_first_summary_row {
 #>   border-top-style: solid;
 #>   border-top-color: #D3D3D3;
 #> }
 #> 
-#> #keulbfdpbc .gt_first_summary_row.thick {
+#> #wkkeulbfdp .gt_first_summary_row.thick {
 #>   border-top-width: 2px;
 #> }
 #> 
-#> #keulbfdpbc .gt_last_summary_row {
+#> #wkkeulbfdp .gt_last_summary_row {
 #>   padding-top: 8px;
 #>   padding-bottom: 8px;
 #>   padding-left: 5px;
@@ -806,7 +806,7 @@ cramer_tab(c("y", "urban.rural"), metric = 'cramer', data = data)
 #>   border-bottom-color: #D3D3D3;
 #> }
 #> 
-#> #keulbfdpbc .gt_grand_summary_row {
+#> #wkkeulbfdp .gt_grand_summary_row {
 #>   color: #333333;
 #>   background-color: #FFFFFF;
 #>   text-transform: inherit;
@@ -816,7 +816,7 @@ cramer_tab(c("y", "urban.rural"), metric = 'cramer', data = data)
 #>   padding-right: 5px;
 #> }
 #> 
-#> #keulbfdpbc .gt_first_grand_summary_row {
+#> #wkkeulbfdp .gt_first_grand_summary_row {
 #>   padding-top: 8px;
 #>   padding-bottom: 8px;
 #>   padding-left: 5px;
@@ -826,7 +826,7 @@ cramer_tab(c("y", "urban.rural"), metric = 'cramer', data = data)
 #>   border-top-color: #D3D3D3;
 #> }
 #> 
-#> #keulbfdpbc .gt_last_grand_summary_row_top {
+#> #wkkeulbfdp .gt_last_grand_summary_row_top {
 #>   padding-top: 8px;
 #>   padding-bottom: 8px;
 #>   padding-left: 5px;
@@ -836,11 +836,11 @@ cramer_tab(c("y", "urban.rural"), metric = 'cramer', data = data)
 #>   border-bottom-color: #D3D3D3;
 #> }
 #> 
-#> #keulbfdpbc .gt_striped {
+#> #wkkeulbfdp .gt_striped {
 #>   background-color: rgba(128, 128, 128, 0.05);
 #> }
 #> 
-#> #keulbfdpbc .gt_table_body {
+#> #wkkeulbfdp .gt_table_body {
 #>   border-top-style: solid;
 #>   border-top-width: 2px;
 #>   border-top-color: #D3D3D3;
@@ -849,7 +849,7 @@ cramer_tab(c("y", "urban.rural"), metric = 'cramer', data = data)
 #>   border-bottom-color: #D3D3D3;
 #> }
 #> 
-#> #keulbfdpbc .gt_footnotes {
+#> #wkkeulbfdp .gt_footnotes {
 #>   color: #333333;
 #>   background-color: #FFFFFF;
 #>   border-bottom-style: none;
@@ -863,7 +863,7 @@ cramer_tab(c("y", "urban.rural"), metric = 'cramer', data = data)
 #>   border-right-color: #D3D3D3;
 #> }
 #> 
-#> #keulbfdpbc .gt_footnote {
+#> #wkkeulbfdp .gt_footnote {
 #>   margin: 0px;
 #>   font-size: 90%;
 #>   padding-top: 4px;
@@ -872,7 +872,7 @@ cramer_tab(c("y", "urban.rural"), metric = 'cramer', data = data)
 #>   padding-right: 5px;
 #> }
 #> 
-#> #keulbfdpbc .gt_sourcenotes {
+#> #wkkeulbfdp .gt_sourcenotes {
 #>   color: #333333;
 #>   background-color: #FFFFFF;
 #>   border-bottom-style: none;
@@ -886,7 +886,7 @@ cramer_tab(c("y", "urban.rural"), metric = 'cramer', data = data)
 #>   border-right-color: #D3D3D3;
 #> }
 #> 
-#> #keulbfdpbc .gt_sourcenote {
+#> #wkkeulbfdp .gt_sourcenote {
 #>   font-size: 90%;
 #>   padding-top: 4px;
 #>   padding-bottom: 4px;
@@ -894,72 +894,72 @@ cramer_tab(c("y", "urban.rural"), metric = 'cramer', data = data)
 #>   padding-right: 5px;
 #> }
 #> 
-#> #keulbfdpbc .gt_left {
+#> #wkkeulbfdp .gt_left {
 #>   text-align: left;
 #> }
 #> 
-#> #keulbfdpbc .gt_center {
+#> #wkkeulbfdp .gt_center {
 #>   text-align: center;
 #> }
 #> 
-#> #keulbfdpbc .gt_right {
+#> #wkkeulbfdp .gt_right {
 #>   text-align: right;
 #>   font-variant-numeric: tabular-nums;
 #> }
 #> 
-#> #keulbfdpbc .gt_font_normal {
+#> #wkkeulbfdp .gt_font_normal {
 #>   font-weight: normal;
 #> }
 #> 
-#> #keulbfdpbc .gt_font_bold {
+#> #wkkeulbfdp .gt_font_bold {
 #>   font-weight: bold;
 #> }
 #> 
-#> #keulbfdpbc .gt_font_italic {
+#> #wkkeulbfdp .gt_font_italic {
 #>   font-style: italic;
 #> }
 #> 
-#> #keulbfdpbc .gt_super {
+#> #wkkeulbfdp .gt_super {
 #>   font-size: 65%;
 #> }
 #> 
-#> #keulbfdpbc .gt_footnote_marks {
+#> #wkkeulbfdp .gt_footnote_marks {
 #>   font-size: 75%;
 #>   vertical-align: 0.4em;
 #>   position: initial;
 #> }
 #> 
-#> #keulbfdpbc .gt_asterisk {
+#> #wkkeulbfdp .gt_asterisk {
 #>   font-size: 100%;
 #>   vertical-align: 0;
 #> }
 #> 
-#> #keulbfdpbc .gt_indent_1 {
+#> #wkkeulbfdp .gt_indent_1 {
 #>   text-indent: 5px;
 #> }
 #> 
-#> #keulbfdpbc .gt_indent_2 {
+#> #wkkeulbfdp .gt_indent_2 {
 #>   text-indent: 10px;
 #> }
 #> 
-#> #keulbfdpbc .gt_indent_3 {
+#> #wkkeulbfdp .gt_indent_3 {
 #>   text-indent: 15px;
 #> }
 #> 
-#> #keulbfdpbc .gt_indent_4 {
+#> #wkkeulbfdp .gt_indent_4 {
 #>   text-indent: 20px;
 #> }
 #> 
-#> #keulbfdpbc .gt_indent_5 {
+#> #wkkeulbfdp .gt_indent_5 {
 #>   text-indent: 25px;
 #> }
 #> 
-#> #keulbfdpbc .katex-display {
+#> #wkkeulbfdp .katex-display {
 #>   display: inline-flex !important;
 #>   margin-bottom: 0.75em !important;
 #> }
 #> 
-#> #keulbfdpbc div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#> #wkkeulbfdp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
 #>   height: 0px !important;
 #> }
 #> </style>

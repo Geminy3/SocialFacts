@@ -14,12 +14,14 @@ which resume all of this tools in one place.
 You can install the development version of SocialFacts like so:
 
 ``` r
+
 devtools::install_github("Geminy3/SocialFacts")
 ```
 
 of install it via CRAN :
 
 ``` r
+
 install.packages("SocialFacts")
 ```
 

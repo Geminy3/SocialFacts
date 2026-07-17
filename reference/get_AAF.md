@@ -65,11 +65,15 @@ data <- data.frame(
    )
 glmmodel <- glm(var_dep ~ var_1 + var_2,
                 data = data, family = binomial("logit"))
+# \donttest{
 res <- get_AAF(model = glmmodel, nvar = 3, vars_dep = "var_dep", data = data,
                nbootstrap = 5)
-#> [1] "Using random variable"
-#> [1] "COMPUTE"
-#res <- get_AAF(model = glmmodel,
-#               name_var = c("var_1", "var_2"),
-#              vars_dep = "var_dep", data = data, nbootstrap = 5)
+#> Using random variable
+#> COMPUTE AAF
+res <- get_AAF(model = glmmodel,
+               name_var = c("var_1", "var_2"),
+              vars_dep = "var_dep", data = data, nbootstrap = 5)
+#> Using named variable
+#> COMPUTE AAF
+# }
 ```
