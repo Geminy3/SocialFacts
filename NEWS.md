@@ -1,3 +1,5 @@
+# SocialFacts 1.3.0
+
 # SocialFacts 1.2.3
 
 # SocialFacts 1.2.2
