@@ -40,10 +40,10 @@ data <- data.frame(
    "var_2" = as.factor(sample(c(rep_len(c(3, 1, 2), length.out = 100)), size = 100))
    )
 glmmodel <- glm(var_dep ~ var_1 + var_2, data = data, family = binomial("logit"))
+
 res <- get_AAF(model = glmmodel, nvar = 3, vars_dep = "var_dep", data = data,
                nbootstrap = 5)
-
-\dontrun{res_tab <- result_tab(model = glmmodel, var_ref = "var_dep",
+res_tab <- result_tab(model = glmmodel, var_ref = "var_dep",
                       var_names = c("var_1", "var_2"),
-                      res_AAF = resAAF$res, source = "TESTDATA", data = data)}
+                      res_AAF = res$res, source = "TESTDATA", data = data)
 }

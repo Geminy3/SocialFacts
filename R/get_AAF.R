@@ -24,63 +24,70 @@
 #'    )
 #' glmmodel <- glm(var_dep ~ var_1 + var_2,
 #'                 data = data, family = binomial("logit"))
+#' \donttest{
 #' res <- get_AAF(model = glmmodel, nvar = 3, vars_dep = "var_dep", data = data,
 #'                nbootstrap = 5)
-#' #res <- get_AAF(model = glmmodel,
-#' #               name_var = c("var_1", "var_2"),
-#' #              vars_dep = "var_dep", data = data, nbootstrap = 5)
-get_AAF <- function(model = NULL, nvar = NULL, name_var = NULL, vars_dep = NULL, data = NULL,
-                   nbootstrap = 50, nperm = 100) {
-  # SETUP
-
+#' res <- get_AAF(model = glmmodel,
+#'                name_var = c("var_1", "var_2"),
+#'               vars_dep = "var_dep", data = data, nbootstrap = 5)
+#' }
+get_AAF <- function(
+  model = NULL,
+  nvar = NULL,
+  name_var = NULL,
+  vars_dep = NULL,
+  data = NULL,
+  nbootstrap = 50,
+  nperm = 100
+) {
   if (!is.null(name_var)) {
-    print("Using named variable")
-    vars_vec = c(name_var, vars_dep)
+    message("Using named variable")
+    vars_vec <- c(name_var, vars_dep)
   } else {
-    print("Using random variable")
+    message("Using random variable")
     if (nvar <= ncol(model$model)) {
       vars.ind <- names(model$model)[2:nvar]
       vars.dep <- names(model$model)[1]
       vars_vec <- c(vars.ind, vars.dep)
     } else {
-      print("nvar is longer than the number of variable names\n Using max length")
+      message(
+        "nvar is longer than the number of variable names\n Using max length"
+      )
       vars.ind <- names(model$model)[2:ncol(model$model)]
       vars.dep <- names(model$model)[1]
       vars_vec <- c(vars.ind, vars.dep)
     }
   }
-  parent_vec <- vars_vec[1:length(vars_vec)-1]
+  parent_vec <- vars_vec[1:length(vars_vec) - 1]
   node <- vars_vec[1:length(vars_vec)]
 
-  # COMPUTE
-  #print(vars_vec)
-  #print(parent_vec)
-  #print(node)
-  print("COMPUTE")
+  message("COMPUTE")
 
   models <- graphPAF::automatic_fit(
-    graphPAF::data_clean(data, vars=vars_vec, model = model),
-    parent_list = c(replicate(n = length(parent_vec),
-                              c(),
-                              simplify = F),
-                    list(parent_vec)),
-    node_vec = node)
+    graphPAF::data_clean(data, vars = vars_vec, model = model),
+    parent_list = c(
+      replicate(n = length(parent_vec), c(), simplify = F),
+      list(parent_vec)
+    ),
+    node_vec = node
+  )
 
   res <- graphPAF::average_paf(
-    graphPAF::data_clean(data, vars=vars_vec, model = model),
+    graphPAF::data_clean(data, vars = vars_vec, model = model),
     model_list = models,
-    parent_list = c(replicate(n = length(parent_vec),
-                              c(),
-                              simplify = F),
-                    list(parent_vec)),
+    parent_list = c(
+      replicate(n = length(parent_vec), c(), simplify = F),
+      list(parent_vec)
+    ),
     node_vec = node,
-    prev=NULL,
+    prev = NULL,
     exact = F,
     nperm = nperm,
     boot_rep = nbootstrap,
     ci = TRUE, #ci_type = 'bca',
     ci_level = 0.95,
-    verbose = T)
+    verbose = T
+  )
 
   return(res)
 }

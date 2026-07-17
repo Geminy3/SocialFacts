@@ -65,8 +65,6 @@ get_yuleq <- function(vars_dep = NULL, name_var = c(), data = NULL, source = "",
             t <- table(dum_tab[,col], data[[vars_dep]])
           }
 
-          #print(t)
-
           # Get pairs for Yule Q
           pair_conco = t[1] * t[4]
           pair_disco = t[2] * t[3]
@@ -109,8 +107,6 @@ get_yuleq <- function(vars_dep = NULL, name_var = c(), data = NULL, source = "",
           t <- table(data[[var]], data[[vars_dep]])
         }
 
-        #print(t)
-
         # Get pairs for Yule Q
         pair_conco = t[1] * t[4]
         pair_disco = t[2] * t[3]
@@ -126,8 +122,6 @@ get_yuleq <- function(vars_dep = NULL, name_var = c(), data = NULL, source = "",
         se.Q <- 0.5 * (1 - Q^2) * se.lor
         ll.Q <- (ll.or - 1)/(ll.or + 1)
         ul.Q <- (ul.or - 1)/(ul.or + 1)
-
-        #print(Yule)
 
         #Fill the vectors
         vars <- c(vars, var)
