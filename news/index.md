@@ -2,6 +2,9 @@
 
 ## SocialFacts 1.3.0
 
+- Fixing a segfault error coming from bootsrap and paralellization
+- Updating pacakge information with CRAN comments
+
 ## SocialFacts 1.2.3
 
 ## SocialFacts 1.2.2
