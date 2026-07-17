@@ -19,7 +19,7 @@ globalVariables(c("label", "position", 'est'))
 #' @importFrom gtsummary add_ci
 #' @importFrom gtsummary add_p
 #' @importFrom gtsummary tbl_merge
-#' @import broom.helpers
+#' @importFrom broom.helpers tidy_avg_slopes
 #' @import scales
 #' @import stringr
 #' @import graphPAF
@@ -34,12 +34,14 @@ globalVariables(c("label", "position", 'est'))
 #'    "var_2" = as.factor(sample(c(rep_len(c(3, 1, 2), length.out = 100)), size = 100))
 #'    )
 #' glmmodel <- glm(var_dep ~ var_1 + var_2, data = data, family = binomial("logit"))
-#' 
+#'
+#' \donttest{
 #' res <- get_AAF(model = glmmodel, nvar = 3, vars_dep = "var_dep", data = data,
 #'                nbootstrap = 5)
 #' res_tab <- result_tab(model = glmmodel, var_ref = "var_dep",
 #'                       var_names = c("var_1", "var_2"),
 #'                       res_AAF = res$res, source = "TESTDATA", data = data)
+#'}
 result_tab <- function(model = NULL, var_ref = NULL, var_names = NULL,
                        res_AAF = NULL, source = "", data = data.frame()) {
 
@@ -51,8 +53,8 @@ result_tab <- function(model = NULL, var_ref = NULL, var_names = NULL,
   #AME TAB
   ## You have to call the marginaleffects function somehow so it don't segfault
   marge <- marginaleffects::avg_slopes(model)
-  #broom.helpers::tidy_avg_slopes(model)
   ##
+
   marge <- model |>
     gtsummary::tbl_regression(
       tidy_fun = broom.helpers::tidy_avg_slopes,
@@ -61,6 +63,7 @@ result_tab <- function(model = NULL, var_ref = NULL, var_names = NULL,
         style_positive = "plus"
       )
     )
+
   marge$table_body |>
     dplyr::mutate(
       label = stringr::str_remove(label, ' - .*$'),
